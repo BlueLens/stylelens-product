@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **sub_images** | **list[str]** |  | [optional] 
 **sizes** | **list[str]** |  | [optional] 
 **discount_rate** | **int** |  | [optional] 
-**feedback** | [**Feedback**](Feedback.md) |  | [optional] 
+**feedback** | [**list[Feedback]**](Feedback.md) |  | [optional] 
 **version** | [**Version**](Version.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

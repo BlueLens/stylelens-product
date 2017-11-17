@@ -29,7 +29,9 @@ sub_images.append('images.8conds.com/xxx/113.png')
 sub_images.append('images.8conds.com/xxx/114.png')
 product.sub_images = sub_images
 
-feedback.photo = 'image.8seconds.com/yyy/111.png'
+photos = []
+photo = ['image.8seconds.com/yyy/111.png', 'xxx.png']
+feedback.photo = photos.append(photo)
 feedback.text = 'asdkfjsdlkfjsk'
 feedback.write_date = "2017-11-14T08:34:12+00:00"
 feedback.total_count = 12
@@ -44,9 +46,12 @@ writer.my_size = 'M'
 writer.product_size = 'Small'
 writer.color = 'red'
 
+feedbacks = []
 feedback.writer = writer
 
-product.feedback = feedback
+feedbacks.append(feedback)
+
+product.feedback = feedbacks
 
 
 

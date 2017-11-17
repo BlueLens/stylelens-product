@@ -31,7 +31,7 @@ class Feedback(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'photo': 'str',
+        'photo': 'list[str]',
         'text': 'str',
         'write_date': 'str',
         'total_count': 'int',
@@ -84,7 +84,7 @@ class Feedback(object):
         Gets the photo of this Feedback.
 
         :return: The photo of this Feedback.
-        :rtype: str
+        :rtype: list[str]
         """
         return self._photo
 
@@ -94,7 +94,7 @@ class Feedback(object):
         Sets the photo of this Feedback.
 
         :param photo: The photo of this Feedback.
-        :type: str
+        :type: list[str]
         """
 
         self._photo = photo

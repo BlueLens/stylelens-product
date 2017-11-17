@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **add_version**
-> AddVersionResponse add_version(body=body)
+> AddVersionResponse add_version(body)
 
 Add a new Version
 
@@ -26,11 +26,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = stylelens_product.VersionApi()
-body = stylelens_product.Version() # Version | Version object that needs to be added to the db. (optional)
+body = stylelens_product.Version() # Version | Version object that needs to be added to the db.
 
 try: 
     # Add a new Version
-    api_response = api_instance.add_version(body=body)
+    api_response = api_instance.add_version(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VersionApi->add_version: %s\n" % e)
@@ -40,7 +40,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Version**](Version.md)| Version object that needs to be added to the db. | [optional] 
+ **body** | [**Version**](Version.md)| Version object that needs to be added to the db. | 
 
 ### Return type
 

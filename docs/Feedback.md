@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**photo** | **str** |  | [optional] 
+**photo** | **list[str]** |  | [optional] 
 **text** | **str** |  | [optional] 
 **write_date** | **str** |  | [optional] 
 **total_count** | **int** |  | [optional] 

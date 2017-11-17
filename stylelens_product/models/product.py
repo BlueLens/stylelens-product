@@ -48,7 +48,7 @@ class Product(object):
         'sub_images': 'list[str]',
         'sizes': 'list[str]',
         'discount_rate': 'int',
-        'feedback': 'Feedback',
+        'feedback': 'list[Feedback]',
         'version': 'Version'
     }
 
@@ -505,7 +505,7 @@ class Product(object):
         Gets the feedback of this Product.
 
         :return: The feedback of this Product.
-        :rtype: Feedback
+        :rtype: list[Feedback]
         """
         return self._feedback
 
@@ -515,7 +515,7 @@ class Product(object):
         Sets the feedback of this Product.
 
         :param feedback: The feedback of this Product.
-        :type: Feedback
+        :type: list[Feedback]
         """
 
         self._feedback = feedback

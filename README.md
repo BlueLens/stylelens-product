@@ -65,7 +65,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://db-product.stylelens.io*
+All URIs are relative to *http://product.stylelens.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
