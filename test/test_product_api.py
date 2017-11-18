@@ -55,6 +55,14 @@ class TestProductApi(unittest.TestCase):
         """
         pass
 
+    def test_get_products_by_hostcode(self):
+        """
+        Test case for get_products_by_hostcode
+
+        Get Product by host_code
+        """
+        pass
+
     def test_update_product(self):
         """
         Test case for update_product

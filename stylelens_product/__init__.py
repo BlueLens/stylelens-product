@@ -21,6 +21,7 @@ from .models.add_version_response_data import AddVersionResponseData
 from .models.delete_product_response import DeleteProductResponse
 from .models.feedback import Feedback
 from .models.get_product_response import GetProductResponse
+from .models.get_products_response import GetProductsResponse
 from .models.get_version_response import GetVersionResponse
 from .models.latest_version_response import LatestVersionResponse
 from .models.product import Product

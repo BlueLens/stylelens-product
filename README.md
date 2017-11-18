@@ -72,6 +72,7 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**add_product**](docs/ProductApi.md#add_product) | **POST** /products | Added a new Product
 *ProductApi* | [**delete_product_by_id**](docs/ProductApi.md#delete_product_by_id) | **DELETE** /products/{productId} | Deletes a Product
 *ProductApi* | [**get_product_by_id**](docs/ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
+*ProductApi* | [**get_products_by_hostcode**](docs/ProductApi.md#get_products_by_hostcode) | **GET** /products/hosts/{hostCode} | Get Product by host_code
 *ProductApi* | [**update_product**](docs/ProductApi.md#update_product) | **PUT** /products | Update an existing Product
 *VersionApi* | [**add_version**](docs/VersionApi.md#add_version) | **POST** /versions | Add a new Version
 *VersionApi* | [**get_latest_version**](docs/VersionApi.md#get_latest_version) | **GET** /versions/latest | Gat latest Version
@@ -87,6 +88,7 @@ Class | Method | HTTP request | Description
  - [DeleteProductResponse](docs/DeleteProductResponse.md)
  - [Feedback](docs/Feedback.md)
  - [GetProductResponse](docs/GetProductResponse.md)
+ - [GetProductsResponse](docs/GetProductsResponse.md)
  - [GetVersionResponse](docs/GetVersionResponse.md)
  - [LatestVersionResponse](docs/LatestVersionResponse.md)
  - [Product](docs/Product.md)
