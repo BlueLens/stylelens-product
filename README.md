@@ -51,15 +51,15 @@ import stylelens_product
 from stylelens_product.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
-body = stylelens_product.Product() # Product | Product object that needs to be added to the db.
+api_instance = stylelens_product.ObjectApi()
+body = stylelens_product.Object() # Object | Object that needs to be added to the db.
 
 try:
-    # Added a new Product
-    api_response = api_instance.add_product(body)
+    # Added a new Object
+    api_response = api_instance.add_object(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProductApi->add_product: %s\n" % e)
+    print("Exception when calling ObjectApi->add_object: %s\n" % e)
 
 ```
 
@@ -69,6 +69,8 @@ All URIs are relative to *http://product.stylelens.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ObjectApi* | [**add_object**](docs/ObjectApi.md#add_object) | **POST** /objects | Added a new Object
+*ObjectApi* | [**get_object_by_id**](docs/ObjectApi.md#get_object_by_id) | **GET** /objects/{objectId} | Find Object by ID
 *ProductApi* | [**add_product**](docs/ProductApi.md#add_product) | **POST** /products | Added a new Product
 *ProductApi* | [**delete_product_by_id**](docs/ProductApi.md#delete_product_by_id) | **DELETE** /products/{productId} | Deletes a Product
 *ProductApi* | [**get_product_by_id**](docs/ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
@@ -81,16 +83,20 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddObjectResponse](docs/AddObjectResponse.md)
+ - [AddObjectResponseData](docs/AddObjectResponseData.md)
  - [AddProductResponse](docs/AddProductResponse.md)
  - [AddProductResponseData](docs/AddProductResponseData.md)
  - [AddVersionResponse](docs/AddVersionResponse.md)
  - [AddVersionResponseData](docs/AddVersionResponseData.md)
  - [DeleteProductResponse](docs/DeleteProductResponse.md)
  - [Feedback](docs/Feedback.md)
+ - [GetObjectResponse](docs/GetObjectResponse.md)
  - [GetProductResponse](docs/GetProductResponse.md)
  - [GetProductsResponse](docs/GetProductsResponse.md)
  - [GetVersionResponse](docs/GetVersionResponse.md)
  - [LatestVersionResponse](docs/LatestVersionResponse.md)
+ - [Object](docs/Object.md)
  - [Product](docs/Product.md)
  - [SubImage](docs/SubImage.md)
  - [UpdateProductResponse](docs/UpdateProductResponse.md)
