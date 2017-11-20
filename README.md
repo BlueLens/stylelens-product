@@ -75,6 +75,7 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**delete_product_by_id**](docs/ProductApi.md#delete_product_by_id) | **DELETE** /products/{productId} | Deletes a Product
 *ProductApi* | [**get_product_by_id**](docs/ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 *ProductApi* | [**get_products_by_hostcode**](docs/ProductApi.md#get_products_by_hostcode) | **GET** /products/hosts/{hostCode} | Get Product by host_code
+*ProductApi* | [**get_products_by_hostcode_and_product_no**](docs/ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 *ProductApi* | [**update_product**](docs/ProductApi.md#update_product) | **PUT** /products | Update an existing Product
 *VersionApi* | [**add_version**](docs/VersionApi.md#add_version) | **POST** /versions | Add a new Version
 *VersionApi* | [**get_latest_version**](docs/VersionApi.md#get_latest_version) | **GET** /versions/latest | Gat latest Version

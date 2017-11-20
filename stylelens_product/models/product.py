@@ -44,7 +44,8 @@ class Product(object):
         'product_no': 'str',
         'nation': 'str',
         'main_image': 'str',
-        'main_image_mobile': 'str',
+        'main_image_mobile_full': 'str',
+        'main_image_mobile_thumb': 'str',
         'sub_images': 'list[str]',
         'sizes': 'list[str]',
         'discount_rate': 'int',
@@ -66,7 +67,8 @@ class Product(object):
         'product_no': 'product_no',
         'nation': 'nation',
         'main_image': 'main_image',
-        'main_image_mobile': 'main_image_mobile',
+        'main_image_mobile_full': 'main_image_mobile_full',
+        'main_image_mobile_thumb': 'main_image_mobile_thumb',
         'sub_images': 'sub_images',
         'sizes': 'sizes',
         'discount_rate': 'discount_rate',
@@ -74,7 +76,7 @@ class Product(object):
         'version': 'version'
     }
 
-    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile=None, sub_images=None, sizes=None, discount_rate=None, feedback=None, version=None):
+    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sizes=None, discount_rate=None, feedback=None, version=None):
         """
         Product - a model defined in Swagger
         """
@@ -92,7 +94,8 @@ class Product(object):
         self._product_no = None
         self._nation = None
         self._main_image = None
-        self._main_image_mobile = None
+        self._main_image_mobile_full = None
+        self._main_image_mobile_thumb = None
         self._sub_images = None
         self._sizes = None
         self._discount_rate = None
@@ -125,8 +128,10 @@ class Product(object):
           self.nation = nation
         if main_image is not None:
           self.main_image = main_image
-        if main_image_mobile is not None:
-          self.main_image_mobile = main_image_mobile
+        if main_image_mobile_full is not None:
+          self.main_image_mobile_full = main_image_mobile_full
+        if main_image_mobile_thumb is not None:
+          self.main_image_mobile_thumb = main_image_mobile_thumb
         if sub_images is not None:
           self.sub_images = sub_images
         if sizes is not None:
@@ -414,27 +419,50 @@ class Product(object):
         self._main_image = main_image
 
     @property
-    def main_image_mobile(self):
+    def main_image_mobile_full(self):
         """
-        Gets the main_image_mobile of this Product.
-        Mobile size image url
+        Gets the main_image_mobile_full of this Product.
+        Mobile full size of image url
 
-        :return: The main_image_mobile of this Product.
+        :return: The main_image_mobile_full of this Product.
         :rtype: str
         """
-        return self._main_image_mobile
+        return self._main_image_mobile_full
 
-    @main_image_mobile.setter
-    def main_image_mobile(self, main_image_mobile):
+    @main_image_mobile_full.setter
+    def main_image_mobile_full(self, main_image_mobile_full):
         """
-        Sets the main_image_mobile of this Product.
-        Mobile size image url
+        Sets the main_image_mobile_full of this Product.
+        Mobile full size of image url
 
-        :param main_image_mobile: The main_image_mobile of this Product.
+        :param main_image_mobile_full: The main_image_mobile_full of this Product.
         :type: str
         """
 
-        self._main_image_mobile = main_image_mobile
+        self._main_image_mobile_full = main_image_mobile_full
+
+    @property
+    def main_image_mobile_thumb(self):
+        """
+        Gets the main_image_mobile_thumb of this Product.
+        Mobile thumbnail size of image url
+
+        :return: The main_image_mobile_thumb of this Product.
+        :rtype: str
+        """
+        return self._main_image_mobile_thumb
+
+    @main_image_mobile_thumb.setter
+    def main_image_mobile_thumb(self, main_image_mobile_thumb):
+        """
+        Sets the main_image_mobile_thumb of this Product.
+        Mobile thumbnail size of image url
+
+        :param main_image_mobile_thumb: The main_image_mobile_thumb of this Product.
+        :type: str
+        """
+
+        self._main_image_mobile_thumb = main_image_mobile_thumb
 
     @property
     def sub_images(self):

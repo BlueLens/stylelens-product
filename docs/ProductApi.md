@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_product_by_id**](ProductApi.md#delete_product_by_id) | **DELETE** /products/{productId} | Deletes a Product
 [**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 [**get_products_by_hostcode**](ProductApi.md#get_products_by_hostcode) | **GET** /products/hosts/{hostCode} | Get Product by host_code
+[**get_products_by_hostcode_and_product_no**](ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**update_product**](ProductApi.md#update_product) | **PUT** /products | Update an existing Product
 
 
@@ -191,6 +192,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetProductsResponse**](GetProductsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_products_by_hostcode_and_product_no**
+> GetProductResponse get_products_by_hostcode_and_product_no(host_code, product_no)
+
+Get Product by hostCode and productNo
+
+Returns Product belongs to a Host and productNo
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_product
+from stylelens_product.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_product.ProductApi()
+host_code = 'host_code_example' # str | 
+product_no = 'product_no_example' # str | 
+
+try: 
+    # Get Product by hostCode and productNo
+    api_response = api_instance.get_products_by_hostcode_and_product_no(host_code, product_no)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_products_by_hostcode_and_product_no: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **host_code** | **str**|  | 
+ **product_no** | **str**|  | 
+
+### Return type
+
+[**GetProductResponse**](GetProductResponse.md)
 
 ### Authorization
 
