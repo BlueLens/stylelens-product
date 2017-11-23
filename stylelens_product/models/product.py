@@ -50,7 +50,7 @@ class Product(object):
         'sizes': 'list[str]',
         'discount_rate': 'int',
         'feedback': 'list[Feedback]',
-        'version': 'Version'
+        'version_name': 'str'
     }
 
     attribute_map = {
@@ -73,10 +73,10 @@ class Product(object):
         'sizes': 'sizes',
         'discount_rate': 'discount_rate',
         'feedback': 'feedback',
-        'version': 'version'
+        'version_name': 'version_name'
     }
 
-    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sizes=None, discount_rate=None, feedback=None, version=None):
+    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sizes=None, discount_rate=None, feedback=None, version_name=None):
         """
         Product - a model defined in Swagger
         """
@@ -100,7 +100,7 @@ class Product(object):
         self._sizes = None
         self._discount_rate = None
         self._feedback = None
-        self._version = None
+        self._version_name = None
 
         if id is not None:
           self.id = id
@@ -140,8 +140,8 @@ class Product(object):
           self.discount_rate = discount_rate
         if feedback is not None:
           self.feedback = feedback
-        if version is not None:
-          self.version = version
+        if version_name is not None:
+          self.version_name = version_name
 
     @property
     def id(self):
@@ -549,25 +549,25 @@ class Product(object):
         self._feedback = feedback
 
     @property
-    def version(self):
+    def version_name(self):
         """
-        Gets the version of this Product.
+        Gets the version_name of this Product.
 
-        :return: The version of this Product.
-        :rtype: Version
+        :return: The version_name of this Product.
+        :rtype: str
         """
-        return self._version
+        return self._version_name
 
-    @version.setter
-    def version(self, version):
+    @version_name.setter
+    def version_name(self, version_name):
         """
-        Sets the version of this Product.
+        Sets the version_name of this Product.
 
-        :param version: The version of this Product.
-        :type: Version
+        :param version_name: The version_name of this Product.
+        :type: str
         """
 
-        self._version = version
+        self._version_name = version_name
 
     def to_dict(self):
         """

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **sizes** | **list[str]** |  | [optional] 
 **discount_rate** | **int** |  | [optional] 
 **feedback** | [**list[Feedback]**](Feedback.md) |  | [optional] 
-**version** | [**Version**](Version.md) |  | [optional] 
+**version_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

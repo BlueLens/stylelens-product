@@ -71,6 +71,14 @@ class TestProductApi(unittest.TestCase):
         """
         pass
 
+    def test_get_products_by_ids(self):
+        """
+        Test case for get_products_by_ids
+
+        Find Products by IDs
+        """
+        pass
+
     def test_update_product(self):
         """
         Test case for update_product

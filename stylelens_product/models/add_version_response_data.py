@@ -31,43 +31,43 @@ class AddVersionResponseData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'version_id': 'str'
+        'version_name': 'str'
     }
 
     attribute_map = {
-        'version_id': 'version_id'
+        'version_name': 'version_name'
     }
 
-    def __init__(self, version_id=None):
+    def __init__(self, version_name=None):
         """
         AddVersionResponseData - a model defined in Swagger
         """
 
-        self._version_id = None
+        self._version_name = None
 
-        if version_id is not None:
-          self.version_id = version_id
+        if version_name is not None:
+          self.version_name = version_name
 
     @property
-    def version_id(self):
+    def version_name(self):
         """
-        Gets the version_id of this AddVersionResponseData.
+        Gets the version_name of this AddVersionResponseData.
 
-        :return: The version_id of this AddVersionResponseData.
+        :return: The version_name of this AddVersionResponseData.
         :rtype: str
         """
-        return self._version_id
+        return self._version_name
 
-    @version_id.setter
-    def version_id(self, version_id):
+    @version_name.setter
+    def version_name(self, version_name):
         """
-        Sets the version_id of this AddVersionResponseData.
+        Sets the version_name of this AddVersionResponseData.
 
-        :param version_id: The version_id of this AddVersionResponseData.
+        :param version_name: The version_name of this AddVersionResponseData.
         :type: str
         """
 
-        self._version_id = version_id
+        self._version_name = version_name
 
     def to_dict(self):
         """

@@ -31,95 +31,43 @@ class Version(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'created_at': 'datetime',
-        'name': 'str'
+        'version_name': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'created_at': 'created_at',
-        'name': 'name'
+        'version_name': 'version_name'
     }
 
-    def __init__(self, id=None, created_at=None, name=None):
+    def __init__(self, version_name=None):
         """
         Version - a model defined in Swagger
         """
 
-        self._id = None
-        self._created_at = None
-        self._name = None
+        self._version_name = None
 
-        if id is not None:
-          self.id = id
-        if created_at is not None:
-          self.created_at = created_at
-        if name is not None:
-          self.name = name
+        if version_name is not None:
+          self.version_name = version_name
 
     @property
-    def id(self):
+    def version_name(self):
         """
-        Gets the id of this Version.
+        Gets the version_name of this Version.
 
-        :return: The id of this Version.
+        :return: The version_name of this Version.
         :rtype: str
         """
-        return self._id
+        return self._version_name
 
-    @id.setter
-    def id(self, id):
+    @version_name.setter
+    def version_name(self, version_name):
         """
-        Sets the id of this Version.
+        Sets the version_name of this Version.
 
-        :param id: The id of this Version.
+        :param version_name: The version_name of this Version.
         :type: str
         """
 
-        self._id = id
-
-    @property
-    def created_at(self):
-        """
-        Gets the created_at of this Version.
-
-        :return: The created_at of this Version.
-        :rtype: datetime
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """
-        Sets the created_at of this Version.
-
-        :param created_at: The created_at of this Version.
-        :type: datetime
-        """
-
-        self._created_at = created_at
-
-    @property
-    def name(self):
-        """
-        Gets the name of this Version.
-
-        :return: The name of this Version.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this Version.
-
-        :param name: The name of this Version.
-        :type: str
-        """
-
-        self._name = name
+        self._version_name = version_name
 
     def to_dict(self):
         """

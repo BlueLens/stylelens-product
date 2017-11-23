@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 [**get_products_by_hostcode**](ProductApi.md#get_products_by_hostcode) | **GET** /products/hosts/{hostCode} | Get Product by host_code
 [**get_products_by_hostcode_and_product_no**](ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
+[**get_products_by_ids**](ProductApi.md#get_products_by_ids) | **GET** /products | Find Products by IDs
 [**update_product**](ProductApi.md#update_product) | **PUT** /products | Update an existing Product
 
 
@@ -242,6 +243,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetProductResponse**](GetProductResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_products_by_ids**
+> GetProductsResponse get_products_by_ids(product_ids)
+
+Find Products by IDs
+
+Returns Products
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_product
+from stylelens_product.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_product.ProductApi()
+product_ids = ['product_ids_example'] # list[str] | IDs of Products to return
+
+try: 
+    # Find Products by IDs
+    api_response = api_instance.get_products_by_ids(product_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_products_by_ids: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_ids** | [**list[str]**](str.md)| IDs of Products to return | 
+
+### Return type
+
+[**GetProductsResponse**](GetProductsResponse.md)
 
 ### Authorization
 
