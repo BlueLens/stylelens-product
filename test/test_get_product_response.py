@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    bl-db-product
+    style-api
 
-    This is a API document for Product DB
+    This is a API document for Stylens Service
 
     OpenAPI spec version: 0.0.1
     Contact: master@bluehack.net

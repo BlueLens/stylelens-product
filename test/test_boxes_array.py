@@ -19,24 +19,24 @@ import unittest
 
 import stylelens_product
 from stylelens_product.rest import ApiException
-from stylelens_product.apis.object_api import ObjectApi
+from stylelens_product.models.boxes_array import BoxesArray
 
 
-class TestObjectApi(unittest.TestCase):
-    """ ObjectApi unit test stubs """
+class TestBoxesArray(unittest.TestCase):
+    """ BoxesArray unit test stubs """
 
     def setUp(self):
-        self.api = stylelens_product.apis.object_api.ObjectApi()
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_objects(self):
+    def testBoxesArray(self):
         """
-        Test case for get_objects
-
-        Query to search multiple objects
+        Test BoxesArray
         """
+        # FIXME: construct object with mandatory attributes with example values
+        #model = stylelens_product.models.boxes_array.BoxesArray()
         pass
 
 

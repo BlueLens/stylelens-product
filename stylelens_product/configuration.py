@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    bl-db-product
+    style-api
 
-    This is a API document for Product DB
+    This is a API document for Stylens Service
 
     OpenAPI spec version: 0.0.1
     Contact: master@bluehack.net
@@ -45,7 +45,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "http://product.stylelens.io"
+        self.host = "http://api.stylelens.io"
         # Default api client
         self.api_client = None
         # Temp file folder for downloading files

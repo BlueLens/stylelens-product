@@ -18,11 +18,9 @@ Name | Type | Description | Notes
 **main_image** | **str** | image url | [optional] 
 **main_image_mobile_full** | **str** | Mobile full size of image url | [optional] 
 **main_image_mobile_thumb** | **str** | Mobile thumbnail size of image url | [optional] 
-**sub_images** | **list[str]** |  | [optional] 
 **sizes** | **list[str]** |  | [optional] 
 **discount_rate** | **int** |  | [optional] 
-**feedback** | [**list[Feedback]**](Feedback.md) |  | [optional] 
-**version_name** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

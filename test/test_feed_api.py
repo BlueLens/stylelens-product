@@ -19,23 +19,23 @@ import unittest
 
 import stylelens_product
 from stylelens_product.rest import ApiException
-from stylelens_product.apis.object_api import ObjectApi
+from stylelens_product.apis.feed_api import FeedApi
 
 
-class TestObjectApi(unittest.TestCase):
-    """ ObjectApi unit test stubs """
+class TestFeedApi(unittest.TestCase):
+    """ FeedApi unit test stubs """
 
     def setUp(self):
-        self.api = stylelens_product.apis.object_api.ObjectApi()
+        self.api = stylelens_product.apis.feed_api.FeedApi()
 
     def tearDown(self):
         pass
 
-    def test_get_objects(self):
+    def test_get_feeds(self):
         """
-        Test case for get_objects
+        Test case for get_feeds
 
-        Query to search multiple objects
+        
         """
         pass
 

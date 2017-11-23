@@ -1,24 +1,20 @@
 # stylelens_product.ProductApi
 
-All URIs are relative to *http://product.stylelens.io*
+All URIs are relative to *http://api.stylelens.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_product**](ProductApi.md#add_product) | **POST** /products | Added a new Product
-[**delete_product_by_id**](ProductApi.md#delete_product_by_id) | **DELETE** /products/{productId} | Deletes a Product
+[**get_product_by_hostcode_and_product_no**](ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
-[**get_products_by_hostcode**](ProductApi.md#get_products_by_hostcode) | **GET** /products/hosts/{hostCode} | Get Product by host_code
-[**get_products_by_hostcode_and_product_no**](ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
-[**get_products_by_ids**](ProductApi.md#get_products_by_ids) | **GET** /products | Find Products by IDs
-[**update_product**](ProductApi.md#update_product) | **PUT** /products | Update an existing Product
+[**get_products**](ProductApi.md#get_products) | **POST** /products | Query to search products
 
 
-# **add_product**
-> AddProductResponse add_product(body)
+# **get_product_by_hostcode_and_product_no**
+> GetProductResponse get_product_by_hostcode_and_product_no(host_code, product_no)
 
-Added a new Product
+Get Product by hostCode and productNo
 
-
+Returns Product belongs to a Host and productNo
 
 ### Example 
 ```python
@@ -30,73 +26,27 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = stylelens_product.ProductApi()
-body = stylelens_product.Product() # Product | Product object that needs to be added to the db.
+host_code = 'host_code_example' # str | 
+product_no = 'product_no_example' # str | 
 
 try: 
-    # Added a new Product
-    api_response = api_instance.add_product(body)
+    # Get Product by hostCode and productNo
+    api_response = api_instance.get_product_by_hostcode_and_product_no(host_code, product_no)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProductApi->add_product: %s\n" % e)
+    print("Exception when calling ProductApi->get_product_by_hostcode_and_product_no: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Product**](Product.md)| Product object that needs to be added to the db. | 
+ **host_code** | **str**|  | 
+ **product_no** | **str**|  | 
 
 ### Return type
 
-[**AddProductResponse**](AddProductResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_product_by_id**
-> DeleteProductResponse delete_product_by_id(product_id)
-
-Deletes a Product
-
-
-
-### Example 
-```python
-from __future__ import print_function
-import time
-import stylelens_product
-from stylelens_product.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = stylelens_product.ProductApi()
-product_id = 'product_id_example' # str | Product id to delete
-
-try: 
-    # Deletes a Product
-    api_response = api_instance.delete_product_by_id(product_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProductApi->delete_product_by_id: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_id** | **str**| Product id to delete | 
-
-### Return type
-
-[**DeleteProductResponse**](DeleteProductResponse.md)
+[**GetProductResponse**](GetProductResponse.md)
 
 ### Authorization
 
@@ -157,12 +107,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_products_by_hostcode**
-> GetProductsResponse get_products_by_hostcode(host_code)
+# **get_products**
+> GetProductsResponse get_products(file=file)
 
-Get Product by host_code
+Query to search products
 
-Returns Products belongs to a Host
+
 
 ### Example 
 ```python
@@ -174,21 +124,21 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = stylelens_product.ProductApi()
-host_code = 'host_code_example' # str | 
+file = '/path/to/file.txt' # file | Image file to upload (only support jpg format yet) (optional)
 
 try: 
-    # Get Product by host_code
-    api_response = api_instance.get_products_by_hostcode(host_code)
+    # Query to search products
+    api_response = api_instance.get_products(file=file)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProductApi->get_products_by_hostcode: %s\n" % e)
+    print("Exception when calling ProductApi->get_products: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host_code** | **str**|  | 
+ **file** | **file**| Image file to upload (only support jpg format yet) | [optional] 
 
 ### Return type
 
@@ -200,153 +150,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_products_by_hostcode_and_product_no**
-> GetProductResponse get_products_by_hostcode_and_product_no(host_code, product_no)
-
-Get Product by hostCode and productNo
-
-Returns Product belongs to a Host and productNo
-
-### Example 
-```python
-from __future__ import print_function
-import time
-import stylelens_product
-from stylelens_product.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = stylelens_product.ProductApi()
-host_code = 'host_code_example' # str | 
-product_no = 'product_no_example' # str | 
-
-try: 
-    # Get Product by hostCode and productNo
-    api_response = api_instance.get_products_by_hostcode_and_product_no(host_code, product_no)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProductApi->get_products_by_hostcode_and_product_no: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **host_code** | **str**|  | 
- **product_no** | **str**|  | 
-
-### Return type
-
-[**GetProductResponse**](GetProductResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_products_by_ids**
-> GetProductsResponse get_products_by_ids(product_ids)
-
-Find Products by IDs
-
-Returns Products
-
-### Example 
-```python
-from __future__ import print_function
-import time
-import stylelens_product
-from stylelens_product.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = stylelens_product.ProductApi()
-product_ids = ['product_ids_example'] # list[str] | IDs of Products to return
-
-try: 
-    # Find Products by IDs
-    api_response = api_instance.get_products_by_ids(product_ids)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProductApi->get_products_by_ids: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_ids** | [**list[str]**](str.md)| IDs of Products to return | 
-
-### Return type
-
-[**GetProductsResponse**](GetProductsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_product**
-> UpdateProductResponse update_product(body)
-
-Update an existing Product
-
-
-
-### Example 
-```python
-from __future__ import print_function
-import time
-import stylelens_product
-from stylelens_product.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = stylelens_product.ProductApi()
-body = stylelens_product.Product() # Product | Product object that needs to be updated to the store
-
-try: 
-    # Update an existing Product
-    api_response = api_instance.update_product(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProductApi->update_product: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Product**](Product.md)| Product object that needs to be updated to the store | 
-
-### Return type
-
-[**UpdateProductResponse**](UpdateProductResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
