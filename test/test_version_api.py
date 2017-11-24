@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import stylelens_product
-from stylelens_product.rest import ApiException
-from stylelens_product.apis.version_api import VersionApi
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.apis.version_api import VersionApi
 
 
 class TestVersionApi(unittest.TestCase):
     """ VersionApi unit test stubs """
 
     def setUp(self):
-        self.api = stylelens_product.apis.version_api.VersionApi()
+        self.api = swagger_client.apis.version_api.VersionApi()
 
     def tearDown(self):
         pass

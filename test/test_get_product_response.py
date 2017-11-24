@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import stylelens_product
-from stylelens_product.rest import ApiException
-from stylelens_product.models.get_product_response import GetProductResponse
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.models.get_product_response import GetProductResponse
 
 
 class TestGetProductResponse(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestGetProductResponse(unittest.TestCase):
         Test GetProductResponse
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = stylelens_product.models.get_product_response.GetProductResponse()
+        #model = swagger_client.models.get_product_response.GetProductResponse()
         pass
 
 

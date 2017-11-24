@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import stylelens_product
-from stylelens_product.rest import ApiException
-from stylelens_product.models.delete_product_response import DeleteProductResponse
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.models.delete_product_response import DeleteProductResponse
 
 
 class TestDeleteProductResponse(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestDeleteProductResponse(unittest.TestCase):
         Test DeleteProductResponse
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = stylelens_product.models.delete_product_response.DeleteProductResponse()
+        #model = swagger_client.models.delete_product_response.DeleteProductResponse()
         pass
 
 

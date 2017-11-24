@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import stylelens_product
-from stylelens_product.rest import ApiException
-from stylelens_product.models.version import Version
+import swagger_client
+from swagger_client.rest import ApiException
+from swagger_client.models.version import Version
 
 
 class TestVersion(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestVersion(unittest.TestCase):
         Test Version
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = stylelens_product.models.version.Version()
+        #model = swagger_client.models.version.Version()
         pass
 
 
