@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    style-api
+    bl-db-product
 
-    This is a API document for Stylens Service
+    This is a API document for Product DB
 
     OpenAPI spec version: 0.0.1
     Contact: master@bluehack.net
@@ -46,9 +46,11 @@ class Product(object):
         'main_image': 'str',
         'main_image_mobile_full': 'str',
         'main_image_mobile_thumb': 'str',
+        'sub_images': 'list[str]',
         'sizes': 'list[str]',
         'discount_rate': 'int',
-        'version': 'str'
+        'feedback': 'list[Feedback]',
+        'version_name': 'str'
     }
 
     attribute_map = {
@@ -67,12 +69,14 @@ class Product(object):
         'main_image': 'main_image',
         'main_image_mobile_full': 'main_image_mobile_full',
         'main_image_mobile_thumb': 'main_image_mobile_thumb',
+        'sub_images': 'sub_images',
         'sizes': 'sizes',
         'discount_rate': 'discount_rate',
-        'version': 'version'
+        'feedback': 'feedback',
+        'version_name': 'version_name'
     }
 
-    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sizes=None, discount_rate=None, version=None):
+    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sizes=None, discount_rate=None, feedback=None, version_name=None):
         """
         Product - a model defined in Swagger
         """
@@ -92,9 +96,11 @@ class Product(object):
         self._main_image = None
         self._main_image_mobile_full = None
         self._main_image_mobile_thumb = None
+        self._sub_images = None
         self._sizes = None
         self._discount_rate = None
-        self._version = None
+        self._feedback = None
+        self._version_name = None
 
         if id is not None:
           self.id = id
@@ -126,12 +132,16 @@ class Product(object):
           self.main_image_mobile_full = main_image_mobile_full
         if main_image_mobile_thumb is not None:
           self.main_image_mobile_thumb = main_image_mobile_thumb
+        if sub_images is not None:
+          self.sub_images = sub_images
         if sizes is not None:
           self.sizes = sizes
         if discount_rate is not None:
           self.discount_rate = discount_rate
-        if version is not None:
-          self.version = version
+        if feedback is not None:
+          self.feedback = feedback
+        if version_name is not None:
+          self.version_name = version_name
 
     @property
     def id(self):
@@ -455,6 +465,27 @@ class Product(object):
         self._main_image_mobile_thumb = main_image_mobile_thumb
 
     @property
+    def sub_images(self):
+        """
+        Gets the sub_images of this Product.
+
+        :return: The sub_images of this Product.
+        :rtype: list[str]
+        """
+        return self._sub_images
+
+    @sub_images.setter
+    def sub_images(self, sub_images):
+        """
+        Sets the sub_images of this Product.
+
+        :param sub_images: The sub_images of this Product.
+        :type: list[str]
+        """
+
+        self._sub_images = sub_images
+
+    @property
     def sizes(self):
         """
         Gets the sizes of this Product.
@@ -497,25 +528,46 @@ class Product(object):
         self._discount_rate = discount_rate
 
     @property
-    def version(self):
+    def feedback(self):
         """
-        Gets the version of this Product.
+        Gets the feedback of this Product.
 
-        :return: The version of this Product.
+        :return: The feedback of this Product.
+        :rtype: list[Feedback]
+        """
+        return self._feedback
+
+    @feedback.setter
+    def feedback(self, feedback):
+        """
+        Sets the feedback of this Product.
+
+        :param feedback: The feedback of this Product.
+        :type: list[Feedback]
+        """
+
+        self._feedback = feedback
+
+    @property
+    def version_name(self):
+        """
+        Gets the version_name of this Product.
+
+        :return: The version_name of this Product.
         :rtype: str
         """
-        return self._version
+        return self._version_name
 
-    @version.setter
-    def version(self, version):
+    @version_name.setter
+    def version_name(self, version_name):
         """
-        Sets the version of this Product.
+        Sets the version_name of this Product.
 
-        :param version: The version of this Product.
+        :param version_name: The version_name of this Product.
         :type: str
         """
 
-        self._version = version
+        self._version_name = version_name
 
     def to_dict(self):
         """

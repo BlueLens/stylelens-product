@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    style-api
+    bl-db-product
 
-    This is a API document for Stylens Service
+    This is a API document for Product DB
 
     OpenAPI spec version: 0.0.1
     Contact: master@bluehack.net
@@ -31,11 +31,19 @@ class TestProductApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_product_by_hostcode_and_product_no(self):
+    def test_add_product(self):
         """
-        Test case for get_product_by_hostcode_and_product_no
+        Test case for add_product
 
-        Get Product by hostCode and productNo
+        Added a new Product
+        """
+        pass
+
+    def test_delete_product_by_id(self):
+        """
+        Test case for delete_product_by_id
+
+        Deletes a Product
         """
         pass
 
@@ -47,11 +55,43 @@ class TestProductApi(unittest.TestCase):
         """
         pass
 
-    def test_get_products(self):
+    def test_get_products_by_hostcode(self):
         """
-        Test case for get_products
+        Test case for get_products_by_hostcode
 
-        Query to search products
+        Get Product by host_code
+        """
+        pass
+
+    def test_get_products_by_hostcode_and_product_no(self):
+        """
+        Test case for get_products_by_hostcode_and_product_no
+
+        Get Product by hostCode and productNo
+        """
+        pass
+
+    def test_get_products_by_ids(self):
+        """
+        Test case for get_products_by_ids
+
+        Find Products by IDs
+        """
+        pass
+
+    def test_get_products_by_image_id_and_object_id(self):
+        """
+        Test case for get_products_by_image_id_and_object_id
+
+        Get Products by imageId and objectId
+        """
+        pass
+
+    def test_update_product(self):
+        """
+        Test case for update_product
+
+        Update an existing Product
         """
         pass
 

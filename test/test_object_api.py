@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    style-api
+    bl-db-product
 
-    This is a API document for Stylens Service
+    This is a API document for Product DB
 
     OpenAPI spec version: 0.0.1
     Contact: master@bluehack.net
@@ -31,11 +31,19 @@ class TestObjectApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_objects(self):
+    def test_add_object(self):
         """
-        Test case for get_objects
+        Test case for add_object
 
-        Query to search multiple objects
+        Added a new Object
+        """
+        pass
+
+    def test_get_object_by_id(self):
+        """
+        Test case for get_object_by_id
+
+        Find Object by ID
         """
         pass
 

@@ -19,24 +19,24 @@ import unittest
 
 import stylelens_product
 from stylelens_product.rest import ApiException
-from stylelens_product.models.get_product_response import GetProductResponse
+from stylelens_product.apis.image_api import ImageApi
 
 
-class TestGetProductResponse(unittest.TestCase):
-    """ GetProductResponse unit test stubs """
+class TestImageApi(unittest.TestCase):
+    """ ImageApi unit test stubs """
 
     def setUp(self):
-        pass
+        self.api = stylelens_product.apis.image_api.ImageApi()
 
     def tearDown(self):
         pass
 
-    def testGetProductResponse(self):
+    def test_add_image(self):
         """
-        Test GetProductResponse
+        Test case for add_image
+
+        Added a new Image
         """
-        # FIXME: construct object with mandatory attributes with example values
-        #model = stylelens_product.models.get_product_response.GetProductResponse()
         pass
 
 

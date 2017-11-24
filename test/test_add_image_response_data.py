@@ -19,11 +19,11 @@ import unittest
 
 import stylelens_product
 from stylelens_product.rest import ApiException
-from stylelens_product.models.get_product_response import GetProductResponse
+from stylelens_product.models.add_image_response_data import AddImageResponseData
 
 
-class TestGetProductResponse(unittest.TestCase):
-    """ GetProductResponse unit test stubs """
+class TestAddImageResponseData(unittest.TestCase):
+    """ AddImageResponseData unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestGetProductResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testGetProductResponse(self):
+    def testAddImageResponseData(self):
         """
-        Test GetProductResponse
+        Test AddImageResponseData
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = stylelens_product.models.get_product_response.GetProductResponse()
+        #model = stylelens_product.models.add_image_response_data.AddImageResponseData()
         pass
 
 
