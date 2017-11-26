@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.update_product_response import UpdateProductResponse
+import stylelens_product
+from stylelens_product.rest import ApiException
+from stylelens_product.models.update_product_response import UpdateProductResponse
 
 
 class TestUpdateProductResponse(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestUpdateProductResponse(unittest.TestCase):
         Test UpdateProductResponse
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.update_product_response.UpdateProductResponse()
+        #model = stylelens_product.models.update_product_response.UpdateProductResponse()
         pass
 
 

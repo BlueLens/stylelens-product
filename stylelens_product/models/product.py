@@ -47,6 +47,7 @@ class Product(object):
         'main_image_mobile_full': 'str',
         'main_image_mobile_thumb': 'str',
         'sub_images': 'list[str]',
+        'sub_images_mobile': 'list[str]',
         'sizes': 'list[str]',
         'discount_rate': 'int',
         'feedback': 'list[Feedback]',
@@ -70,13 +71,14 @@ class Product(object):
         'main_image_mobile_full': 'main_image_mobile_full',
         'main_image_mobile_thumb': 'main_image_mobile_thumb',
         'sub_images': 'sub_images',
+        'sub_images_mobile': 'sub_images_mobile',
         'sizes': 'sizes',
         'discount_rate': 'discount_rate',
         'feedback': 'feedback',
         'version_name': 'version_name'
     }
 
-    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sizes=None, discount_rate=None, feedback=None, version_name=None):
+    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sub_images_mobile=None, sizes=None, discount_rate=None, feedback=None, version_name=None):
         """
         Product - a model defined in Swagger
         """
@@ -97,6 +99,7 @@ class Product(object):
         self._main_image_mobile_full = None
         self._main_image_mobile_thumb = None
         self._sub_images = None
+        self._sub_images_mobile = None
         self._sizes = None
         self._discount_rate = None
         self._feedback = None
@@ -134,6 +137,8 @@ class Product(object):
           self.main_image_mobile_thumb = main_image_mobile_thumb
         if sub_images is not None:
           self.sub_images = sub_images
+        if sub_images_mobile is not None:
+          self.sub_images_mobile = sub_images_mobile
         if sizes is not None:
           self.sizes = sizes
         if discount_rate is not None:
@@ -484,6 +489,27 @@ class Product(object):
         """
 
         self._sub_images = sub_images
+
+    @property
+    def sub_images_mobile(self):
+        """
+        Gets the sub_images_mobile of this Product.
+
+        :return: The sub_images_mobile of this Product.
+        :rtype: list[str]
+        """
+        return self._sub_images_mobile
+
+    @sub_images_mobile.setter
+    def sub_images_mobile(self, sub_images_mobile):
+        """
+        Sets the sub_images_mobile of this Product.
+
+        :param sub_images_mobile: The sub_images_mobile of this Product.
+        :type: list[str]
+        """
+
+        self._sub_images_mobile = sub_images_mobile
 
     @property
     def sizes(self):

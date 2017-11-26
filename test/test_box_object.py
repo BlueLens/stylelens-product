@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.box_object import BoxObject
+import stylelens_product
+from stylelens_product.rest import ApiException
+from stylelens_product.models.box_object import BoxObject
 
 
 class TestBoxObject(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestBoxObject(unittest.TestCase):
         Test BoxObject
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.box_object.BoxObject()
+        #model = stylelens_product.models.box_object.BoxObject()
         pass
 
 

@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.image_api import ImageApi
+import stylelens_product
+from stylelens_product.rest import ApiException
+from stylelens_product.apis.image_api import ImageApi
 
 
 class TestImageApi(unittest.TestCase):
     """ ImageApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.image_api.ImageApi()
+        self.api = stylelens_product.apis.image_api.ImageApi()
 
     def tearDown(self):
         pass

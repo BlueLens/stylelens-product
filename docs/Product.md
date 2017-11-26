@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **main_image_mobile_full** | **str** | Mobile full size of image url | [optional] 
 **main_image_mobile_thumb** | **str** | Mobile thumbnail size of image url | [optional] 
 **sub_images** | **list[str]** |  | [optional] 
+**sub_images_mobile** | **list[str]** |  | [optional] 
 **sizes** | **list[str]** |  | [optional] 
 **discount_rate** | **int** |  | [optional] 
 **feedback** | [**list[Feedback]**](Feedback.md) |  | [optional] 

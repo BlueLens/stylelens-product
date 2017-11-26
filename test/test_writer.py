@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.writer import Writer
+import stylelens_product
+from stylelens_product.rest import ApiException
+from stylelens_product.models.writer import Writer
 
 
 class TestWriter(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestWriter(unittest.TestCase):
         Test Writer
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.writer.Writer()
+        #model = stylelens_product.models.writer.Writer()
         pass
 
 

@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.latest_version_response import LatestVersionResponse
+import stylelens_product
+from stylelens_product.rest import ApiException
+from stylelens_product.models.latest_version_response import LatestVersionResponse
 
 
 class TestLatestVersionResponse(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestLatestVersionResponse(unittest.TestCase):
         Test LatestVersionResponse
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.latest_version_response.LatestVersionResponse()
+        #model = stylelens_product.models.latest_version_response.LatestVersionResponse()
         pass
 
 

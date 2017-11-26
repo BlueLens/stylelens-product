@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.sub_image import SubImage
+import stylelens_product
+from stylelens_product.rest import ApiException
+from stylelens_product.models.sub_image import SubImage
 
 
 class TestSubImage(unittest.TestCase):
@@ -36,7 +36,7 @@ class TestSubImage(unittest.TestCase):
         Test SubImage
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.sub_image.SubImage()
+        #model = stylelens_product.models.sub_image.SubImage()
         pass
 
 
