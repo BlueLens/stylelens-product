@@ -365,6 +365,8 @@ class ProductApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str host_code:  (required)
+        :param int offset: 
+        :param int limit: 
         :return: GetProductsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -391,12 +393,14 @@ class ProductApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str host_code:  (required)
+        :param int offset: 
+        :param int limit: 
         :return: GetProductsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['host_code']
+        all_params = ['host_code', 'offset', 'limit']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -423,6 +427,10 @@ class ProductApi(object):
             path_params['hostCode'] = params['host_code']
 
         query_params = []
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
 
         header_params = {}
 

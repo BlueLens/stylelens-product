@@ -159,7 +159,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_products_by_hostcode**
-> GetProductsResponse get_products_by_hostcode(host_code)
+> GetProductsResponse get_products_by_hostcode(host_code, offset=offset, limit=limit)
 
 Get Product by host_code
 
@@ -176,10 +176,12 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = stylelens_product.ProductApi()
 host_code = 'host_code_example' # str | 
+offset = 56 # int |  (optional)
+limit = 56 # int |  (optional)
 
 try: 
     # Get Product by host_code
-    api_response = api_instance.get_products_by_hostcode(host_code)
+    api_response = api_instance.get_products_by_hostcode(host_code, offset=offset, limit=limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductApi->get_products_by_hostcode: %s\n" % e)
@@ -190,6 +192,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **host_code** | **str**|  | 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 
