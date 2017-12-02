@@ -51,15 +51,15 @@ import stylelens_product
 from stylelens_product.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
-api_instance = stylelens_product.ImageApi()
-body = stylelens_product.Image() # Image | Product object that needs to be added to the db.
+api_instance = stylelens_product.HostApi()
+body = stylelens_product.Host() # Host | Host object that needs to be added to the db.
 
 try:
-    # Added a new Image
-    api_response = api_instance.add_image(body)
+    # Add a new HOst
+    api_response = api_instance.add_host(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ImageApi->add_image: %s\n" % e)
+    print("Exception when calling HostApi->add_host: %s\n" % e)
 
 ```
 
@@ -69,6 +69,7 @@ All URIs are relative to *http://product.stylelens.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*HostApi* | [**add_host**](docs/HostApi.md#add_host) | **POST** /hosts | Add a new HOst
 *ImageApi* | [**add_image**](docs/ImageApi.md#add_image) | **POST** /images | Added a new Image
 *ObjectApi* | [**add_object**](docs/ObjectApi.md#add_object) | **POST** /objects | Added a new Object
 *ObjectApi* | [**get_object_by_id**](docs/ObjectApi.md#get_object_by_id) | **GET** /objects/{objectId} | Find Object by ID
@@ -79,7 +80,8 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**get_products_by_hostcode_and_product_no**](docs/ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 *ProductApi* | [**get_products_by_ids**](docs/ProductApi.md#get_products_by_ids) | **GET** /products | Find Products by IDs
 *ProductApi* | [**get_products_by_image_id_and_object_id**](docs/ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
-*ProductApi* | [**update_product**](docs/ProductApi.md#update_product) | **PUT** /products | Update an existing Product
+*ProductApi* | [**update_product_by_hostcode_and_productno**](docs/ProductApi.md#update_product_by_hostcode_and_productno) | **PUT** /products/hosts/{hostCode}/products/{productNo} | Update an existing Product
+*ProductApi* | [**update_product_by_id**](docs/ProductApi.md#update_product_by_id) | **PUT** /products/{productId} | Update an existing Product
 *VersionApi* | [**add_version**](docs/VersionApi.md#add_version) | **POST** /versions | Add a new Version
 *VersionApi* | [**get_latest_version**](docs/VersionApi.md#get_latest_version) | **GET** /versions/latest | Gat latest Version
 *VersionApi* | [**get_version_by_id**](docs/VersionApi.md#get_version_by_id) | **GET** /versions/{versionId} | Gat Version by ID
@@ -87,6 +89,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddHostResponse](docs/AddHostResponse.md)
+ - [AddHostResponseData](docs/AddHostResponseData.md)
  - [AddImageResponse](docs/AddImageResponse.md)
  - [AddImageResponseData](docs/AddImageResponseData.md)
  - [AddObjectResponse](docs/AddObjectResponse.md)
@@ -104,6 +108,7 @@ Class | Method | HTTP request | Description
  - [GetProductResponse](docs/GetProductResponse.md)
  - [GetProductsResponse](docs/GetProductsResponse.md)
  - [GetVersionResponse](docs/GetVersionResponse.md)
+ - [Host](docs/Host.md)
  - [Image](docs/Image.md)
  - [LatestVersionResponse](docs/LatestVersionResponse.md)
  - [Object](docs/Object.md)

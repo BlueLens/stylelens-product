@@ -1,11 +1,11 @@
-# UpdateProductResponse
+# Host
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modified_count** | **int** |  | [optional] 
-**created_count** | **int** |  | [optional] 
-**message** | **str** |  | [optional] 
+**host_code** | **str** |  | [optional] 
+**host_url** | **str** |  | [optional] 
+**host_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11,7 +11,8 @@ Method | HTTP request | Description
 [**get_products_by_hostcode_and_product_no**](ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**get_products_by_ids**](ProductApi.md#get_products_by_ids) | **GET** /products | Find Products by IDs
 [**get_products_by_image_id_and_object_id**](ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
-[**update_product**](ProductApi.md#update_product) | **PUT** /products | Update an existing Product
+[**update_product_by_hostcode_and_productno**](ProductApi.md#update_product_by_hostcode_and_productno) | **PUT** /products/hosts/{hostCode}/products/{productNo} | Update an existing Product
+[**update_product_by_id**](ProductApi.md#update_product_by_id) | **PUT** /products/{productId} | Update an existing Product
 
 
 # **add_product**
@@ -358,8 +359,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_product**
-> UpdateProductResponse update_product(body)
+# **update_product_by_hostcode_and_productno**
+> UpdateProductResponse update_product_by_hostcode_and_productno(host_code, product_no, body)
 
 Update an existing Product
 
@@ -375,20 +376,74 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = stylelens_product.ProductApi()
+host_code = 'host_code_example' # str | 
+product_no = 'product_no_example' # str | 
 body = stylelens_product.Product() # Product | Product object that needs to be updated to the store
 
 try: 
     # Update an existing Product
-    api_response = api_instance.update_product(body)
+    api_response = api_instance.update_product_by_hostcode_and_productno(host_code, product_no, body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProductApi->update_product: %s\n" % e)
+    print("Exception when calling ProductApi->update_product_by_hostcode_and_productno: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **host_code** | **str**|  | 
+ **product_no** | **str**|  | 
+ **body** | [**Product**](Product.md)| Product object that needs to be updated to the store | 
+
+### Return type
+
+[**UpdateProductResponse**](UpdateProductResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_product_by_id**
+> UpdateProductResponse update_product_by_id(product_id, body)
+
+Update an existing Product
+
+
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_product
+from stylelens_product.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_product.ProductApi()
+product_id = 'product_id_example' # str | ID of Product to return
+body = stylelens_product.Product() # Product | Product object that needs to be updated to the store
+
+try: 
+    # Update an existing Product
+    api_response = api_instance.update_product_by_id(product_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->update_product_by_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **str**| ID of Product to return | 
  **body** | [**Product**](Product.md)| Product object that needs to be updated to the store | 
 
 ### Return type

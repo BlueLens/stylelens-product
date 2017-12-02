@@ -14,6 +14,8 @@
 from __future__ import absolute_import
 
 # import models into sdk package
+from .models.add_host_response import AddHostResponse
+from .models.add_host_response_data import AddHostResponseData
 from .models.add_image_response import AddImageResponse
 from .models.add_image_response_data import AddImageResponseData
 from .models.add_object_response import AddObjectResponse
@@ -31,6 +33,7 @@ from .models.get_object_response import GetObjectResponse
 from .models.get_product_response import GetProductResponse
 from .models.get_products_response import GetProductsResponse
 from .models.get_version_response import GetVersionResponse
+from .models.host import Host
 from .models.image import Image
 from .models.latest_version_response import LatestVersionResponse
 from .models.object import Object
@@ -41,6 +44,7 @@ from .models.version import Version
 from .models.writer import Writer
 
 # import apis into sdk package
+from .apis.host_api import HostApi
 from .apis.image_api import ImageApi
 from .apis.object_api import ObjectApi
 from .apis.product_api import ProductApi

@@ -781,7 +781,7 @@ class ProductApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_product(self, body, **kwargs):
+    def update_product_by_hostcode_and_productno(self, host_code, product_no, body, **kwargs):
         """
         Update an existing Product
         
@@ -791,10 +791,12 @@ class ProductApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_product(body, callback=callback_function)
+        >>> thread = api.update_product_by_hostcode_and_productno(host_code, product_no, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str host_code:  (required)
+        :param str product_no:  (required)
         :param Product body: Product object that needs to be updated to the store (required)
         :return: UpdateProductResponse
                  If the method is called asynchronously,
@@ -802,12 +804,12 @@ class ProductApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_product_with_http_info(body, **kwargs)
+            return self.update_product_by_hostcode_and_productno_with_http_info(host_code, product_no, body, **kwargs)
         else:
-            (data) = self.update_product_with_http_info(body, **kwargs)
+            (data) = self.update_product_by_hostcode_and_productno_with_http_info(host_code, product_no, body, **kwargs)
             return data
 
-    def update_product_with_http_info(self, body, **kwargs):
+    def update_product_by_hostcode_and_productno_with_http_info(self, host_code, product_no, body, **kwargs):
         """
         Update an existing Product
         
@@ -817,17 +819,19 @@ class ProductApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_product_with_http_info(body, callback=callback_function)
+        >>> thread = api.update_product_by_hostcode_and_productno_with_http_info(host_code, product_no, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str host_code:  (required)
+        :param str product_no:  (required)
         :param Product body: Product object that needs to be updated to the store (required)
         :return: UpdateProductResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']
+        all_params = ['host_code', 'product_no', 'body']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -838,18 +842,28 @@ class ProductApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_product" % key
+                    " to method update_product_by_hostcode_and_productno" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'host_code' is set
+        if ('host_code' not in params) or (params['host_code'] is None):
+            raise ValueError("Missing the required parameter `host_code` when calling `update_product_by_hostcode_and_productno`")
+        # verify the required parameter 'product_no' is set
+        if ('product_no' not in params) or (params['product_no'] is None):
+            raise ValueError("Missing the required parameter `product_no` when calling `update_product_by_hostcode_and_productno`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_product`")
+            raise ValueError("Missing the required parameter `body` when calling `update_product_by_hostcode_and_productno`")
 
 
         collection_formats = {}
 
         path_params = {}
+        if 'host_code' in params:
+            path_params['hostCode'] = params['host_code']
+        if 'product_no' in params:
+            path_params['productNo'] = params['product_no']
 
         query_params = []
 
@@ -872,7 +886,120 @@ class ProductApi(object):
         # Authentication setting
         auth_settings = []
 
-        return self.api_client.call_api('/products', 'PUT',
+        return self.api_client.call_api('/products/hosts/{hostCode}/products/{productNo}', 'PUT',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='UpdateProductResponse',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def update_product_by_id(self, product_id, body, **kwargs):
+        """
+        Update an existing Product
+        
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_product_by_id(product_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str product_id: ID of Product to return (required)
+        :param Product body: Product object that needs to be updated to the store (required)
+        :return: UpdateProductResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.update_product_by_id_with_http_info(product_id, body, **kwargs)
+        else:
+            (data) = self.update_product_by_id_with_http_info(product_id, body, **kwargs)
+            return data
+
+    def update_product_by_id_with_http_info(self, product_id, body, **kwargs):
+        """
+        Update an existing Product
+        
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_product_by_id_with_http_info(product_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str product_id: ID of Product to return (required)
+        :param Product body: Product object that needs to be updated to the store (required)
+        :return: UpdateProductResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['product_id', 'body']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_product_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'product_id' is set
+        if ('product_id' not in params) or (params['product_id'] is None):
+            raise ValueError("Missing the required parameter `product_id` when calling `update_product_by_id`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_product_by_id`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'product_id' in params:
+            path_params['productId'] = params['product_id']
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/products/{productId}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,

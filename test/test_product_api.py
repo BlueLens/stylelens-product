@@ -87,9 +87,17 @@ class TestProductApi(unittest.TestCase):
         """
         pass
 
-    def test_update_product(self):
+    def test_update_product_by_hostcode_and_productno(self):
         """
-        Test case for update_product
+        Test case for update_product_by_hostcode_and_productno
+
+        Update an existing Product
+        """
+        pass
+
+    def test_update_product_by_id(self):
+        """
+        Test case for update_product_by_id
 
         Update an existing Product
         """
