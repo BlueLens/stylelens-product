@@ -1,4 +1,4 @@
-# stylelens_product.VersionApi
+# swagger_client.VersionApi
 
 All URIs are relative to *http://product.stylelens.io*
 
@@ -20,13 +20,13 @@ Add a new Version
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.VersionApi()
-body = stylelens_product.Version() # Version | Version object that needs to be added to the db.
+api_instance = swagger_client.VersionApi()
+body = swagger_client.Version() # Version | Version object that needs to be added to the db.
 
 try: 
     # Add a new Version
@@ -68,12 +68,12 @@ Returns a latest Version
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.VersionApi()
+api_instance = swagger_client.VersionApi()
 
 try: 
     # Gat latest Version
@@ -112,12 +112,12 @@ Returns a Version
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.VersionApi()
+api_instance = swagger_client.VersionApi()
 version_id = 'version_id_example' # str | ID of Version to return
 
 try: 

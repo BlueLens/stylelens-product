@@ -1,4 +1,4 @@
-# stylelens_product.ProductApi
+# swagger_client.ProductApi
 
 All URIs are relative to *http://product.stylelens.io*
 
@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 [**get_products_by_hostcode**](ProductApi.md#get_products_by_hostcode) | **GET** /products/hosts/{hostCode} | Get Product by host_code
 [**get_products_by_hostcode_and_product_no**](ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
+[**get_products_by_hostcode_and_version_id**](ProductApi.md#get_products_by_hostcode_and_version_id) | **GET** /products/hosts/{hostCode}/versions/{versionId} | Get Product by hostCode and versionId
 [**get_products_by_ids**](ProductApi.md#get_products_by_ids) | **GET** /products | Find Products by IDs
 [**get_products_by_image_id_and_object_id**](ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
 [**get_products_by_version_id**](ProductApi.md#get_products_by_version_id) | **GET** /products/versions/{versionId} | Get Product by versionId
@@ -27,13 +28,13 @@ Added a new Product
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
-body = stylelens_product.Product() # Product | Product object that needs to be added to the db.
+api_instance = swagger_client.ProductApi()
+body = swagger_client.Product() # Product | Product object that needs to be added to the db.
 
 try: 
     # Added a new Product
@@ -75,12 +76,12 @@ Deletes a Product
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 product_id = 'product_id_example' # str | Product id to delete
 
 try: 
@@ -123,12 +124,12 @@ Returns a single Product
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 product_id = 'product_id_example' # str | ID of Product to return
 
 try: 
@@ -171,12 +172,12 @@ Returns Products belongs to a Host
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 host_code = 'host_code_example' # str | 
 offset = 56 # int |  (optional)
 limit = 56 # int |  (optional)
@@ -223,12 +224,12 @@ Returns Product belongs to a Host and productNo
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 host_code = 'host_code_example' # str | 
 product_no = 'product_no_example' # str | 
 
@@ -262,6 +263,62 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_products_by_hostcode_and_version_id**
+> GetProductsResponse get_products_by_hostcode_and_version_id(host_code, version_id, is_indexed=is_indexed, offset=offset, limit=limit)
+
+Get Product by hostCode and versionId
+
+Returns Product belongs to a Host and VersionId
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.ProductApi()
+host_code = 'host_code_example' # str | 
+version_id = 'version_id_example' # str | 
+is_indexed = true # bool |  (optional)
+offset = 56 # int |  (optional)
+limit = 56 # int |  (optional)
+
+try: 
+    # Get Product by hostCode and versionId
+    api_response = api_instance.get_products_by_hostcode_and_version_id(host_code, version_id, is_indexed=is_indexed, offset=offset, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_products_by_hostcode_and_version_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **host_code** | **str**|  | 
+ **version_id** | **str**|  | 
+ **is_indexed** | **bool**|  | [optional] 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
+
+### Return type
+
+[**GetProductsResponse**](GetProductsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_products_by_ids**
 > GetProductsResponse get_products_by_ids(product_ids)
 
@@ -273,12 +330,12 @@ Returns Products
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 product_ids = ['product_ids_example'] # list[str] | IDs of Products to return
 
 try: 
@@ -321,12 +378,12 @@ Returns Products belongs to a imageId and objectId
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 image_id = 'image_id_example' # str | 
 object_id = 56 # int | 
 
@@ -371,12 +428,12 @@ Returns Products belongs to a Version
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 version_id = 'version_id_example' # str | 
 is_indexed = true # bool |  (optional)
 offset = 56 # int |  (optional)
@@ -425,15 +482,15 @@ Update an existing Product
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 host_code = 'host_code_example' # str | 
 product_no = 'product_no_example' # str | 
-body = stylelens_product.Product() # Product | Product object that needs to be updated to the store
+body = swagger_client.Product() # Product | Product object that needs to be updated to the store
 
 try: 
     # Update an existing Product
@@ -477,14 +534,14 @@ Update an existing Product
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = swagger_client.ProductApi()
 product_id = 'product_id_example' # str | ID of Product to return
-body = stylelens_product.Product() # Product | Product object that needs to be updated to the store
+body = swagger_client.Product() # Product | Product object that needs to be updated to the store
 
 try: 
     # Update an existing Product

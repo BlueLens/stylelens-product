@@ -1,4 +1,4 @@
-# stylelens_product.HostApi
+# swagger_client.HostApi
 
 All URIs are relative to *http://product.stylelens.io*
 
@@ -19,13 +19,13 @@ Add a new HOst
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.HostApi()
-body = stylelens_product.Host() # Host | Host object that needs to be added to the db.
+api_instance = swagger_client.HostApi()
+body = swagger_client.Host() # Host | Host object that needs to be added to the db.
 
 try: 
     # Add a new HOst
@@ -67,12 +67,12 @@ Returns Hosts
 ```python
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+import swagger_client
+from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = stylelens_product.HostApi()
+api_instance = swagger_client.HostApi()
 offset = 56 # int |  (optional)
 limit = 56 # int |  (optional)
 
