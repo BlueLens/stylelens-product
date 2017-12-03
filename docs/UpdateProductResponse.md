@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**product_id** | **str** |  | [optional] 
 **modified_count** | **int** |  | [optional] 
 **created_count** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 

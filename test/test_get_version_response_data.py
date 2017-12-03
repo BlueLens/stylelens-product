@@ -19,32 +19,24 @@ import unittest
 
 import stylelens_product
 from stylelens_product.rest import ApiException
-from stylelens_product.apis.host_api import HostApi
+from stylelens_product.models.get_version_response_data import GetVersionResponseData
 
 
-class TestHostApi(unittest.TestCase):
-    """ HostApi unit test stubs """
+class TestGetVersionResponseData(unittest.TestCase):
+    """ GetVersionResponseData unit test stubs """
 
     def setUp(self):
-        self.api = stylelens_product.apis.host_api.HostApi()
+        pass
 
     def tearDown(self):
         pass
 
-    def test_add_host(self):
+    def testGetVersionResponseData(self):
         """
-        Test case for add_host
-
-        Add a new HOst
+        Test GetVersionResponseData
         """
-        pass
-
-    def test_get_hosts(self):
-        """
-        Test case for get_hosts
-
-        Get all hosts
-        """
+        # FIXME: construct object with mandatory attributes with example values
+        #model = stylelens_product.models.get_version_response_data.GetVersionResponseData()
         pass
 
 

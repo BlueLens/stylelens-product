@@ -31,32 +31,58 @@ class UpdateProductResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'product_id': 'str',
         'modified_count': 'int',
         'created_count': 'int',
         'message': 'str'
     }
 
     attribute_map = {
+        'product_id': 'product_id',
         'modified_count': 'modified_count',
         'created_count': 'created_count',
         'message': 'message'
     }
 
-    def __init__(self, modified_count=None, created_count=None, message=None):
+    def __init__(self, product_id=None, modified_count=None, created_count=None, message=None):
         """
         UpdateProductResponse - a model defined in Swagger
         """
 
+        self._product_id = None
         self._modified_count = None
         self._created_count = None
         self._message = None
 
+        if product_id is not None:
+          self.product_id = product_id
         if modified_count is not None:
           self.modified_count = modified_count
         if created_count is not None:
           self.created_count = created_count
         if message is not None:
           self.message = message
+
+    @property
+    def product_id(self):
+        """
+        Gets the product_id of this UpdateProductResponse.
+
+        :return: The product_id of this UpdateProductResponse.
+        :rtype: str
+        """
+        return self._product_id
+
+    @product_id.setter
+    def product_id(self, product_id):
+        """
+        Sets the product_id of this UpdateProductResponse.
+
+        :param product_id: The product_id of this UpdateProductResponse.
+        :type: str
+        """
+
+        self._product_id = product_id
 
     @property
     def modified_count(self):

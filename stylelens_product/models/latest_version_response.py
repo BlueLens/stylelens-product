@@ -32,7 +32,7 @@ class LatestVersionResponse(object):
     """
     swagger_types = {
         'message': 'str',
-        'data': 'AddVersionResponseData'
+        'data': 'Version'
     }
 
     attribute_map = {
@@ -80,7 +80,7 @@ class LatestVersionResponse(object):
         Gets the data of this LatestVersionResponse.
 
         :return: The data of this LatestVersionResponse.
-        :rtype: AddVersionResponseData
+        :rtype: Version
         """
         return self._data
 
@@ -90,7 +90,7 @@ class LatestVersionResponse(object):
         Sets the data of this LatestVersionResponse.
 
         :param data: The data of this LatestVersionResponse.
-        :type: AddVersionResponseData
+        :type: Version
         """
 
         self._data = data

@@ -70,6 +70,7 @@ All URIs are relative to *http://product.stylelens.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *HostApi* | [**add_host**](docs/HostApi.md#add_host) | **POST** /hosts | Add a new HOst
+*HostApi* | [**get_hosts**](docs/HostApi.md#get_hosts) | **GET** /hosts | Get all hosts
 *ImageApi* | [**add_image**](docs/ImageApi.md#add_image) | **POST** /images | Added a new Image
 *ObjectApi* | [**add_object**](docs/ObjectApi.md#add_object) | **POST** /objects | Added a new Object
 *ObjectApi* | [**get_object_by_id**](docs/ObjectApi.md#get_object_by_id) | **GET** /objects/{objectId} | Find Object by ID
@@ -104,10 +105,12 @@ Class | Method | HTTP request | Description
  - [BoxesArray](docs/BoxesArray.md)
  - [DeleteProductResponse](docs/DeleteProductResponse.md)
  - [Feedback](docs/Feedback.md)
+ - [GetHostsResponse](docs/GetHostsResponse.md)
  - [GetObjectResponse](docs/GetObjectResponse.md)
  - [GetProductResponse](docs/GetProductResponse.md)
  - [GetProductsResponse](docs/GetProductsResponse.md)
  - [GetVersionResponse](docs/GetVersionResponse.md)
+ - [GetVersionResponseData](docs/GetVersionResponseData.md)
  - [Host](docs/Host.md)
  - [Image](docs/Image.md)
  - [LatestVersionResponse](docs/LatestVersionResponse.md)

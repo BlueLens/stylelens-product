@@ -7,7 +7,7 @@ from pprint import pprint
 api_instance = stylelens_product.VersionApi()
 version = stylelens_product.Version()
 
-version.name = "test"
+version.version_name = "test7"
 
 try:
     # Added a new Version

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_products_by_hostcode_and_product_no**](ProductApi.md#get_products_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**get_products_by_ids**](ProductApi.md#get_products_by_ids) | **GET** /products | Find Products by IDs
 [**get_products_by_image_id_and_object_id**](ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
+[**get_products_by_version_id**](ProductApi.md#get_products_by_version_id) | **GET** /products/versions/{versionId} | Get Product by versionId
 [**update_product_by_hostcode_and_productno**](ProductApi.md#update_product_by_hostcode_and_productno) | **PUT** /products/hosts/{hostCode}/products/{productNo} | Update an existing Product
 [**update_product_by_id**](ProductApi.md#update_product_by_id) | **PUT** /products/{productId} | Update an existing Product
 
@@ -343,6 +344,60 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **image_id** | **str**|  | 
  **object_id** | **int**|  | 
+
+### Return type
+
+[**GetProductsResponse**](GetProductsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_products_by_version_id**
+> GetProductsResponse get_products_by_version_id(version_id, is_indexed=is_indexed, offset=offset, limit=limit)
+
+Get Product by versionId
+
+Returns Products belongs to a Version
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_product
+from stylelens_product.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_product.ProductApi()
+version_id = 'version_id_example' # str | 
+is_indexed = true # bool |  (optional)
+offset = 56 # int |  (optional)
+limit = 56 # int |  (optional)
+
+try: 
+    # Get Product by versionId
+    api_response = api_instance.get_products_by_version_id(version_id, is_indexed=is_indexed, offset=offset, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_products_by_version_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **version_id** | **str**|  | 
+ **is_indexed** | **bool**|  | [optional] 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 

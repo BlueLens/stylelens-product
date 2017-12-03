@@ -31,43 +31,69 @@ class Version(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'version_name': 'str'
+        'id': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'version_name': 'version_name'
+        'id': 'id',
+        'name': 'name'
     }
 
-    def __init__(self, version_name=None):
+    def __init__(self, id=None, name=None):
         """
         Version - a model defined in Swagger
         """
 
-        self._version_name = None
+        self._id = None
+        self._name = None
 
-        if version_name is not None:
-          self.version_name = version_name
+        if id is not None:
+          self.id = id
+        if name is not None:
+          self.name = name
 
     @property
-    def version_name(self):
+    def id(self):
         """
-        Gets the version_name of this Version.
+        Gets the id of this Version.
 
-        :return: The version_name of this Version.
+        :return: The id of this Version.
         :rtype: str
         """
-        return self._version_name
+        return self._id
 
-    @version_name.setter
-    def version_name(self, version_name):
+    @id.setter
+    def id(self, id):
         """
-        Sets the version_name of this Version.
+        Sets the id of this Version.
 
-        :param version_name: The version_name of this Version.
+        :param id: The id of this Version.
         :type: str
         """
 
-        self._version_name = version_name
+        self._id = id
+
+    @property
+    def name(self):
+        """
+        Gets the name of this Version.
+
+        :return: The name of this Version.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this Version.
+
+        :param name: The name of this Version.
+        :type: str
+        """
+
+        self._name = name
 
     def to_dict(self):
         """

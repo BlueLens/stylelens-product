@@ -51,7 +51,8 @@ class Product(object):
         'sizes': 'list[str]',
         'discount_rate': 'int',
         'feedback': 'list[Feedback]',
-        'version_name': 'str'
+        'version_id': 'str',
+        'is_indexed': 'bool'
     }
 
     attribute_map = {
@@ -75,10 +76,11 @@ class Product(object):
         'sizes': 'sizes',
         'discount_rate': 'discount_rate',
         'feedback': 'feedback',
-        'version_name': 'version_name'
+        'version_id': 'version_id',
+        'is_indexed': 'is_indexed'
     }
 
-    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sub_images_mobile=None, sizes=None, discount_rate=None, feedback=None, version_name=None):
+    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sub_images=None, sub_images_mobile=None, sizes=None, discount_rate=None, feedback=None, version_id=None, is_indexed=None):
         """
         Product - a model defined in Swagger
         """
@@ -103,7 +105,8 @@ class Product(object):
         self._sizes = None
         self._discount_rate = None
         self._feedback = None
-        self._version_name = None
+        self._version_id = None
+        self._is_indexed = None
 
         if id is not None:
           self.id = id
@@ -145,8 +148,10 @@ class Product(object):
           self.discount_rate = discount_rate
         if feedback is not None:
           self.feedback = feedback
-        if version_name is not None:
-          self.version_name = version_name
+        if version_id is not None:
+          self.version_id = version_id
+        if is_indexed is not None:
+          self.is_indexed = is_indexed
 
     @property
     def id(self):
@@ -575,25 +580,46 @@ class Product(object):
         self._feedback = feedback
 
     @property
-    def version_name(self):
+    def version_id(self):
         """
-        Gets the version_name of this Product.
+        Gets the version_id of this Product.
 
-        :return: The version_name of this Product.
+        :return: The version_id of this Product.
         :rtype: str
         """
-        return self._version_name
+        return self._version_id
 
-    @version_name.setter
-    def version_name(self, version_name):
+    @version_id.setter
+    def version_id(self, version_id):
         """
-        Sets the version_name of this Product.
+        Sets the version_id of this Product.
 
-        :param version_name: The version_name of this Product.
+        :param version_id: The version_id of this Product.
         :type: str
         """
 
-        self._version_name = version_name
+        self._version_id = version_id
+
+    @property
+    def is_indexed(self):
+        """
+        Gets the is_indexed of this Product.
+
+        :return: The is_indexed of this Product.
+        :rtype: bool
+        """
+        return self._is_indexed
+
+    @is_indexed.setter
+    def is_indexed(self, is_indexed):
+        """
+        Sets the is_indexed of this Product.
+
+        :param is_indexed: The is_indexed of this Product.
+        :type: bool
+        """
+
+        self._is_indexed = is_indexed
 
     def to_dict(self):
         """

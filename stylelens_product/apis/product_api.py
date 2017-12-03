@@ -781,6 +781,120 @@ class ProductApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def get_products_by_version_id(self, version_id, **kwargs):
+        """
+        Get Product by versionId
+        Returns Products belongs to a Version
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_products_by_version_id(version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str version_id:  (required)
+        :param bool is_indexed: 
+        :param int offset: 
+        :param int limit: 
+        :return: GetProductsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.get_products_by_version_id_with_http_info(version_id, **kwargs)
+        else:
+            (data) = self.get_products_by_version_id_with_http_info(version_id, **kwargs)
+            return data
+
+    def get_products_by_version_id_with_http_info(self, version_id, **kwargs):
+        """
+        Get Product by versionId
+        Returns Products belongs to a Version
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_products_by_version_id_with_http_info(version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str version_id:  (required)
+        :param bool is_indexed: 
+        :param int offset: 
+        :param int limit: 
+        :return: GetProductsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['version_id', 'is_indexed', 'offset', 'limit']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_products_by_version_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'version_id' is set
+        if ('version_id' not in params) or (params['version_id'] is None):
+            raise ValueError("Missing the required parameter `version_id` when calling `get_products_by_version_id`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'version_id' in params:
+            path_params['versionId'] = params['version_id']
+
+        query_params = []
+        if 'is_indexed' in params:
+            query_params.append(('is_indexed', params['is_indexed']))
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/products/versions/{versionId}', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='GetProductsResponse',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def update_product_by_hostcode_and_productno(self, host_code, product_no, body, **kwargs):
         """
         Update an existing Product
