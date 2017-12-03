@@ -1,4 +1,4 @@
-# swagger_client.ImageApi
+# stylelens_product.ImageApi
 
 All URIs are relative to *http://product.stylelens.io*
 
@@ -18,13 +18,13 @@ Added a new Image
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import stylelens_product
+from stylelens_product.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ImageApi()
-body = swagger_client.Image() # Image | Product object that needs to be added to the db.
+api_instance = stylelens_product.ImageApi()
+body = stylelens_product.Image() # Image | Product object that needs to be added to the db.
 
 try: 
     # Added a new Image

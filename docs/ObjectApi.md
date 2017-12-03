@@ -1,4 +1,4 @@
-# swagger_client.ObjectApi
+# stylelens_product.ObjectApi
 
 All URIs are relative to *http://product.stylelens.io*
 
@@ -19,13 +19,13 @@ Added a new Object
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import stylelens_product
+from stylelens_product.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ObjectApi()
-body = swagger_client.Object() # Object | Object that needs to be added to the db.
+api_instance = stylelens_product.ObjectApi()
+body = stylelens_product.Object() # Object | Object that needs to be added to the db.
 
 try: 
     # Added a new Object
@@ -67,12 +67,12 @@ Returns a single Object
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import stylelens_product
+from stylelens_product.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ObjectApi()
+api_instance = stylelens_product.ObjectApi()
 object_id = 'object_id_example' # str | ID of Object to return
 
 try: 
