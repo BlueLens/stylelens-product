@@ -11,7 +11,7 @@ Method | HTTP request | Description
 # **add_host**
 > AddHostResponse add_host(body)
 
-Add a new Host
+Add a new HOst
 
 
 

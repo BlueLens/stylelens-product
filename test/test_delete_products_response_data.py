@@ -19,11 +19,11 @@ import unittest
 
 import stylelens_product
 from stylelens_product.rest import ApiException
-from stylelens_product.models.latest_version_response import LatestVersionResponse
+from stylelens_product.models.delete_products_response_data import DeleteProductsResponseData
 
 
-class TestLatestVersionResponse(unittest.TestCase):
-    """ LatestVersionResponse unit test stubs """
+class TestDeleteProductsResponseData(unittest.TestCase):
+    """ DeleteProductsResponseData unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestLatestVersionResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testLatestVersionResponse(self):
+    def testDeleteProductsResponseData(self):
         """
-        Test LatestVersionResponse
+        Test DeleteProductsResponseData
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = stylelens_product.models.latest_version_response.LatestVersionResponse()
+        #model = stylelens_product.models.delete_products_response_data.DeleteProductsResponseData()
         pass
 
 
