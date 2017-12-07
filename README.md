@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
  - [AddProductResponse](docs/AddProductResponse.md)
  - [AddProductResponseData](docs/AddProductResponseData.md)
  - [AddVersionResponse](docs/AddVersionResponse.md)
+ - [AddVersionResponseData](docs/AddVersionResponseData.md)
  - [BoxArray](docs/BoxArray.md)
  - [BoxObject](docs/BoxObject.md)
  - [BoxesArray](docs/BoxesArray.md)

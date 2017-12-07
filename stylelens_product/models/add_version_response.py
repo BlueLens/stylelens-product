@@ -32,7 +32,7 @@ class AddVersionResponse(object):
     """
     swagger_types = {
         'message': 'str',
-        'data': 'Version'
+        'data': 'AddVersionResponseData'
     }
 
     attribute_map = {
@@ -80,7 +80,7 @@ class AddVersionResponse(object):
         Gets the data of this AddVersionResponse.
 
         :return: The data of this AddVersionResponse.
-        :rtype: Version
+        :rtype: AddVersionResponseData
         """
         return self._data
 
@@ -90,7 +90,7 @@ class AddVersionResponse(object):
         Sets the data of this AddVersionResponse.
 
         :param data: The data of this AddVersionResponse.
-        :type: Version
+        :type: AddVersionResponseData
         """
 
         self._data = data
