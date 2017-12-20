@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**box** | [**BoxArray**](BoxArray.md) |  | [optional] 
+**box** | [**Box**](Box.md) |  | [optional] 
 **class_code** | **str** |  | [optional] 
 **class_name** | **str** |  | [optional] 
 **products** | [**list[Product]**](Product.md) |  | [optional] 

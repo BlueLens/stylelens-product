@@ -24,7 +24,7 @@ from .models.add_product_response import AddProductResponse
 from .models.add_product_response_data import AddProductResponseData
 from .models.add_version_response import AddVersionResponse
 from .models.add_version_response_data import AddVersionResponseData
-from .models.box_array import BoxArray
+from .models.box import Box
 from .models.box_object import BoxObject
 from .models.boxes_array import BoxesArray
 from .models.delete_product_response import DeleteProductResponse

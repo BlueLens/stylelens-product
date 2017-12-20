@@ -1,6 +1,6 @@
 # stylelens_product.ObjectApi
 
-All URIs are relative to *http://product.stylelens.io*
+All URIs are relative to *http://product-prod.stylelens.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

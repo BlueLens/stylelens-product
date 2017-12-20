@@ -15,7 +15,7 @@ product.host_code = "hc0001"
 product.host_name = "8seconds"
 product.name = "t-shirt"
 product.tags = ['aaa', 'bbb']
-product.price = 27100
+product.price = 27001
 product.currency_unit = 'KRW'
 product.product_url = 'www.8seconds.com/product/xxxxx'
 product.product_no = 'GM00391'
@@ -54,9 +54,19 @@ feedbacks.append(feedback)
 product.feedback = feedbacks
 
 
+product2 = stylelens_product.Product() # Product | Product object that needs to be added to the db.
+sub_images = []
+sub_images.append('images.8conds.com/xxx/111.png')
+sub_images.append('images.8conds.com/xxx/112.png')
+sub_images.append('images.8conds.com/xxx/113.png')
+sub_images.append('images.8conds.com/xxx/114.png')
+product2.sub_images_mobile = sub_images
+
+product3 = stylelens_product.Product()
+product3.class_code = '3'
 
 try:
-    api_response = api_instance.update_product_by_id('5a0d721edb467900017ae1f2', product)
+    api_response = api_instance.update_product_by_id('5a32b01d4dfd7d90b880faf7', product3)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductApi->update_product_by_id: %s\n" % e)

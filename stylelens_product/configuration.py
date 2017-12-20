@@ -45,7 +45,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "http://product.stylelens.io"
+        self.host = "http://35.187.216.145"
         # Default api client
         self.api_client = None
         # Temp file folder for downloading files
