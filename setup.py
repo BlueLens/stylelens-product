@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "stylelens-product"
-VERSION = "1.0.24"
+VERSION = "1.0.26"
 # To install the library, run the following
 #
 # python setup.py install
@@ -23,7 +23,7 @@ VERSION = "1.0.24"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = ["pymongo"]
 
 setup(
     name=NAME,
@@ -31,7 +31,7 @@ setup(
     description="bl-db-product",
     author_email="master@bluehack.net",
     url="",
-    keywords=["Swagger", "bl-db-product"],
+    keywords=["BlueLens", "bl-db-product"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
