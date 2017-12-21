@@ -41,3 +41,14 @@ class Products(DataBase):
       print(e)
 
     return r.modified_count
+
+  def update_product_by_hostcode_and_productno(self, product):
+    query = {"host_code": product['host_code'], "product_no": product['product_no']}
+    try:
+      r = self.products.update_one(query,
+                                  {"$set": product},
+                                  upsert=True)
+    except Exception as e:
+      print(e)
+
+    return r.modified_count
