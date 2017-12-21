@@ -6,7 +6,7 @@ api_instance = Products()
 
 product = {}
 product['host_code'] = 'HC1'
-product['product_no'] = 'lll2'
+product['product_no'] = 'lll4'
 product['price'] = '1'
 
 try:

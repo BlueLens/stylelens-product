@@ -51,4 +51,4 @@ class Products(DataBase):
     except Exception as e:
       print(e)
 
-    return r.modified_count
+    return r.raw_result
