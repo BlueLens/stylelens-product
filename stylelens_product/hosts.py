@@ -21,3 +21,11 @@ class Hosts(DataBase):
 
     return id
 
+  def get_hosts(self, offset=0, limit=100):
+    try:
+      r = self.hosts.find({}).skip(offset).limit(limit)
+    except Exception as e:
+      print(e)
+
+    return list(r)
+
