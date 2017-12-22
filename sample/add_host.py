@@ -7,7 +7,7 @@ from pprint import pprint
 api_instance = Hosts()
 
 host = {}
-host['host_code'] = "HCxxxx2"
+host['host_code'] = "HC0008"
 
 try:
     api_response = api_instance.add_host(host)

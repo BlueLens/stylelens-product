@@ -22,12 +22,11 @@ class Products(DataBase):
     return product_id
 
   def get_products_by_host_code_and_version_id(self,
-                                              host_code, version_id,
+                                              host_code, version_id, is_processed=False,
                                               offset=0, limit=100):
+    query = {"host_code": host_code, "version_id": version_id, "is_processed": is_processed}
     try:
-      r = self.products.find({"host_code": host_code,
-                              "version_id": version_id})\
-                            .skip(offset).limit(limit)
+      r = self.products.find(query).skip(offset).limit(limit)
     except Exception as e:
       print(e)
 
@@ -48,6 +47,19 @@ class Products(DataBase):
       r = self.products.update_one(query,
                                   {"$set": product},
                                   upsert=True)
+    except Exception as e:
+      print(e)
+
+    return r.raw_result
+
+  def delete_products_by_hostcode_and_version_id(self, host_code, version_id, except_version=True):
+    if except_version == True:
+      query = {"host_code": host_code, "version_id": version_id}
+    else:
+      query = {"host_code": host_code, "version_id": {"$ne": version_id}}
+
+    try:
+      r = self.products.delete_many(query)
     except Exception as e:
       print(e)
 
