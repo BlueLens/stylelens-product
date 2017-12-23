@@ -21,7 +21,7 @@ class Products(DataBase):
 
     return product_id
 
-  def get_products_by_host_code_and_version_id(self,
+  def get_products_by_hostcode_and_version_id(self,
                                               host_code, version_id, is_processed=False,
                                               offset=0, limit=100):
     query = {"host_code": host_code, "version_id": version_id, "is_processed": is_processed}
