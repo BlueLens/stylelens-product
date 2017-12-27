@@ -46,7 +46,12 @@ class Products(DataBase):
     query = {}
     query['version_id'] = version_id
     query['is_processed'] = is_processed
-    query['is_classified'] = is_classified
+
+    if is_classified is False:
+      query['$or'] = [{'is_classified':False}, {'is_classified':None}]
+    else:
+      query['is_classified'] = True
+
     try:
       r = self.products.find(query).skip(offset).limit(limit)
     except Exception as e:
