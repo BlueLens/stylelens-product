@@ -22,9 +22,15 @@ class Products(DataBase):
     return product_id
 
   def get_products_by_hostcode_and_version_id(self,
-                                              host_code, version_id, is_processed=False,
+                                              host_code, version_id,
+                                              is_processed=False,
+                                              is_classified=False,
                                               offset=0, limit=100):
-    query = {"host_code": host_code, "version_id": version_id, "is_processed": is_processed}
+    query = {}
+    query['host_code'] = host_code
+    query['version_id'] = version_id
+    query['is_processed'] = is_processed
+    query['is_classified'] = is_classified
     try:
       r = self.products.find(query).skip(offset).limit(limit)
     except Exception as e:
