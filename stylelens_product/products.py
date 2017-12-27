@@ -38,6 +38,22 @@ class Products(DataBase):
 
     return list(r)
 
+  def get_products_by_version_id(self,
+                                  version_id,
+                                  is_processed=False,
+                                  is_classified=False,
+                                  offset=0, limit=100):
+    query = {}
+    query['version_id'] = version_id
+    query['is_processed'] = is_processed
+    query['is_classified'] = is_classified
+    try:
+      r = self.products.find(query).skip(offset).limit(limit)
+    except Exception as e:
+      print(e)
+
+    return list(r)
+
   def update_product_by_id(self, product_id, product):
     try:
       r = self.products.update_one({"_id": ObjectId(product_id)},
