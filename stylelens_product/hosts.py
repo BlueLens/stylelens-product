@@ -1,6 +1,10 @@
 from bson.objectid import ObjectId
 from stylelens_product.database import DataBase
 
+HOST_STATUS_TODO = 'todo'
+HOST_STATUS_DOING = 'doing'
+HOST_STATUS_DONE = 'done'
+
 class Hosts(DataBase):
   def __init__(self):
     super(Hosts, self).__init__()
@@ -8,7 +12,10 @@ class Hosts(DataBase):
 
   def add_host(self, host):
     id = None
-    query = {"host_code": host['host_code']}
+    query = {}
+    query['host_code'] = host['host_code']
+    host['crawl_status'] = HOST_STATUS_TODO
+
     try:
       r = self.hosts.update_one(query,
                                {"$set": host},
@@ -21,10 +28,14 @@ class Hosts(DataBase):
 
     return id
 
-  def get_hosts(self, version_id=None, offset=0, limit=100):
+  def get_hosts(self, version_id=None, crawl_status=HOST_STATUS_TODO, offset=0, limit=100):
     query = {}
+
     if version_id is not None:
-      query = {"version_id":version_id}
+      query['version_id'] = version_id
+
+    query['crawl_status'] = crawl_status
+
     try:
       r = self.hosts.find(query).skip(offset).limit(limit)
     except Exception as e:

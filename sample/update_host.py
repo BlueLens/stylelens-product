@@ -9,6 +9,7 @@ api_instance = Hosts()
 host = {}
 host['host_code'] = "HC0062"
 host['version_id'] = "1234"
+host['crawl_status'] = "todo"
 
 try:
     api_response = api_instance.update_host(host)
