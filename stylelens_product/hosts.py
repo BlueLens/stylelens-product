@@ -21,11 +21,24 @@ class Hosts(DataBase):
 
     return id
 
-  def get_hosts(self, offset=0, limit=100):
+  def get_hosts(self, version_id=None, offset=0, limit=100):
+    query = {}
+    if version_id is not None:
+      query = {"version_id":version_id}
     try:
-      r = self.hosts.find({}).skip(offset).limit(limit)
+      r = self.hosts.find(query).skip(offset).limit(limit)
     except Exception as e:
       print(e)
 
     return list(r)
 
+  def update_host(self, host):
+    query = {"host_code": host['host_code']}
+    try:
+      r = self.hosts.update_one(query,
+                                {"$set": host},
+                                upsert=True)
+    except Exception as e:
+      print(e)
+
+    return r.raw_result
