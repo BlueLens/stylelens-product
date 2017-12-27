@@ -34,7 +34,10 @@ class Hosts(DataBase):
     if version_id is not None:
       query['version_id'] = version_id
 
-    query['crawl_status'] = crawl_status
+    if crawl_status is HOST_STATUS_TODO:
+      query['$or'] = [{'crawl_status':HOST_STATUS_TODO}, {'crawl_status':None}]
+    else:
+      query['crawl_status'] = crawl_status
 
     try:
       r = self.hosts.find(query).skip(offset).limit(limit)
