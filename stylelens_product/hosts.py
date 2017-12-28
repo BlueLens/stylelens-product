@@ -1,10 +1,6 @@
 from bson.objectid import ObjectId
 from stylelens_product.database import DataBase
 
-HOST_STATUS_TODO = 'todo'
-HOST_STATUS_DOING = 'doing'
-HOST_STATUS_DONE = 'done'
-
 class Hosts(DataBase):
   def __init__(self):
     super(Hosts, self).__init__()
