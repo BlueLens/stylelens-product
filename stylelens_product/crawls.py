@@ -41,9 +41,9 @@ class Crawls(DataBase):
 
     return list(r)
 
-  def update_crawl_by_host_id(self, host_id, crawl):
+  def update_crawl_by_host_code(self, host_code, crawl):
     try:
-      r = self.crawls.update_one({"host_id": host_id},
+      r = self.crawls.update_one({"host_code": host_code},
                                   {"$set": crawl})
     except Exception as e:
       print(e)
