@@ -71,6 +71,20 @@ class Products(DataBase):
 
     return count
 
+  def get_size_products(self, version_id, is_classified=None):
+    query = {}
+    query['version_id'] = version_id
+
+    if is_classified is not None:
+      query['is_classified'] = is_classified
+
+    try:
+      count = self.products.find(query).count()
+    except Exception as e:
+      print(e)
+
+    return count
+
   def update_product_by_id(self, product_id, product):
     try:
       r = self.products.update_one({"_id": ObjectId(product_id)},
