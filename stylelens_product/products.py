@@ -62,7 +62,7 @@ class Products(DataBase):
   def get_size_not_classified(self, version_id):
     query = {}
     query['version_id'] = version_id
-    query['is_classified'] = False
+    query['$or'] = [{'is_classified':False}, {'is_classified':None}]
 
     try:
       count = self.products.find(query).count()

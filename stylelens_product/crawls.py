@@ -41,6 +41,23 @@ class Crawls(DataBase):
 
     return list(r)
 
+  def get_size_crawls(self,
+                 version_id,
+                 status=None,
+                 offset=0, limit=100):
+    query = {}
+    query['version_id'] = version_id
+
+    if status is not None:
+      query['status'] = status
+
+    try:
+      count = self.crawls.find(query).count()
+    except Exception as e:
+      print(e)
+
+    return count
+
   def update_crawl_by_host_code(self, host_code, crawl):
     try:
       r = self.crawls.update_one({"host_code": host_code},
