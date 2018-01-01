@@ -40,16 +40,20 @@ class Products(DataBase):
 
   def get_products_by_version_id(self,
                                   version_id,
-                                  is_processed=False,
-                                  is_classified=False,
+                                  is_processed=None,
+                                  is_classified=None,
                                   offset=0, limit=100):
     query = {}
     query['version_id'] = version_id
-    query['is_processed'] = is_processed
+
+    if is_processed is False:
+      query['$or'] = [{'is_processed':False}, {'is_processed':None}]
+    elif is_processed is True:
+      query['is_processed'] = True
 
     if is_classified is False:
       query['$or'] = [{'is_classified':False}, {'is_classified':None}]
-    else:
+    elif is_classified is True:
       query['is_classified'] = True
 
     try:

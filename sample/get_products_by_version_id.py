@@ -1,13 +1,14 @@
 from __future__ import print_function
 import time
-import stylelens_product
-from stylelens_product.rest import ApiException
+from stylelens_product.products import Products
 from pprint import pprint
 # create an instance of the API class
-api_instance = stylelens_product.ProductApi()
+api_instance = Products()
 
 try:
-    api_response = api_instance.get_products_by_version_id('5a2398d54fce095c804ad79c', )
+    api_response = api_instance.get_products_by_version_id('5a47ccfe4dfd7d90b84eb710')
     pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ProductApi->get_products_by_version_id: %s\n" % e)
+    api_response = api_instance.get_products_by_version_id('5a47ccfe4dfd7d90b84eb710', is_classified=False, is_processed=True)
+    pprint(api_response)
+except Exception as e:
+    print("Exception when calling get_products_by_version_id: %s\n" % e)
