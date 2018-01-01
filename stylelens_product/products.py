@@ -71,9 +71,12 @@ class Products(DataBase):
 
     return count
 
-  def get_size_products(self, version_id, is_classified=None):
+  def get_size_products(self, version_id, is_processed=None, is_classified=None):
     query = {}
     query['version_id'] = version_id
+
+    if is_processed is not None:
+      query['is_processed'] = is_processed
 
     if is_classified is not None:
       query['is_classified'] = is_classified
