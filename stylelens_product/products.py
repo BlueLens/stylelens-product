@@ -92,6 +92,28 @@ class Products(DataBase):
 
     return count
 
+  def get_text_by_keyword(self, keyword):
+    query = {}
+    query['$or'] = [{"name":{"$regex": keyword, "$options": 'x'}},
+                    {'tags':{"$regex": keyword, "$options": 'x'}},
+                    {'cate':{"$regex": keyword, "$options": 'x'}}]
+
+    try:
+      r = self.products.find(query)
+      if r.distinct("name") is not None:
+        name = r.distinct("name")
+      if r.distinct("tags") is not None:
+        tags = r.distinct("tags")
+      if r.distinct("cate") is not None:
+        cate = r.distinct("cate")
+
+      text_sum = name + tags + cate
+    except Exception as e:
+      print(e)
+
+    return text_sum
+
+
   def update_product_by_id(self, product_id, product):
     try:
       r = self.products.update_one({"_id": ObjectId(product_id)},
