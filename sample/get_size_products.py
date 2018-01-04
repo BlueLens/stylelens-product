@@ -6,7 +6,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = Products()
 
-version_id = "5a47ccfe4dfd7d90b84eb710"
+version_id = "5a4dacce4dfd7d90b8837719"
 
 
 try:

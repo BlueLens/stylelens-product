@@ -112,6 +112,16 @@ class Products(DataBase):
 
     return r.raw_result
 
+  def delete_product(self, product_id):
+    query = {}
+    query['_id'] = ObjectId(product_id)
+    try:
+      r = self.products.delete_one(query)
+    except Exception as e:
+      print(e)
+
+    return r.raw_result
+
   def delete_products_by_hostcode_and_version_id(self, host_code, version_id, except_version=True):
     if except_version == True:
       query = {"host_code": host_code, "version_id": version_id}
