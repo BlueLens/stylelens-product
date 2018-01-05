@@ -21,6 +21,14 @@ class Products(DataBase):
 
     return product_id
 
+  def get_product_by_id(self, product_id):
+    try:
+      r = self.products.find_one({"_id": ObjectId(product_id)})
+    except Exception as e:
+      print(e)
+
+    return r
+
   def get_products_by_hostcode_and_version_id(self,
                                               host_code, version_id,
                                               is_processed=False,
