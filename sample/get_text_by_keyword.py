@@ -9,4 +9,4 @@ try:
     api_response = api_instance.get_text_by_keyword("민소매")
     pprint(api_response)
 except Exception as e:
-    print("Exception when calling get_products_by_version_id: %s\n" % e)
+    print("Exception when calling get_text_by_keyword: %s\n" % e)

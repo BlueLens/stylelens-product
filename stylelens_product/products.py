@@ -102,9 +102,9 @@ class Products(DataBase):
 
   def get_text_by_keyword(self, keyword):
     query = {}
-    query['$or'] = [{"name":{"$regex": keyword, "$options": 'x'}},
-                    {'tags':{"$regex": keyword, "$options": 'x'}},
-                    {'cate':{"$regex": keyword, "$options": 'x'}}]
+    query['$or'] = [{"name":{"$regex": keyword}},
+                    {'tags':{"$regex": keyword}},
+                    {'cate':{"$regex": keyword}}]
 
     try:
       r = self.products.find(query)
