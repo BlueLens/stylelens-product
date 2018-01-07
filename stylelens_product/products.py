@@ -105,7 +105,6 @@ class Products(DataBase):
                               limit=100):
     query = {}
     query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
-                    {'tags': {"$regex": keyword, "$options": 'x'}},
                     {'cate': {"$regex": keyword, "$options": 'x'}}]
 
     try:
