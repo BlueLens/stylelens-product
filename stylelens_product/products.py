@@ -100,6 +100,25 @@ class Products(DataBase):
 
     return count
 
+  def get_products_by_keyword(self, keyword, only_text=True,
+                              offset=0,
+                              limit=100):
+    query = {}
+    query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
+                    {'tags': {"$regex": keyword, "$options": 'x'}},
+                    {'cate': {"$regex": keyword, "$options": 'x'}}]
+
+    try:
+      if only_text is True:
+        r = self.products.find(query, {'name':1, 'tags':1, 'cate':1}).skip(offset).limit(limit)
+      else:
+        r = self.products.find(query).skip(offset).limit(limit)
+
+    except Exception as e:
+      print(e)
+
+    return list(r)
+
   def update_product_by_id(self, product_id, product):
     try:
       r = self.products.update_one({"_id": ObjectId(product_id)},
