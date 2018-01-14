@@ -160,3 +160,19 @@ class Products(DataBase):
       print(e)
 
     return r.raw_result
+
+  def reset_product_as_not_object_classified(self, version_id=None):
+    query = {}
+    product = {"is_classified": None}
+
+    if version_id is None:
+      query = {"is_classified":{"$ne":None}}
+    else:
+      query = {"is_classified":{"$ne":None}, "version_id":version_id}
+
+    try:
+      r = self.products.update_many(query, {"$set":product})
+      print(r)
+    except Exception as e:
+      print(e)
+    return r.raw_result
