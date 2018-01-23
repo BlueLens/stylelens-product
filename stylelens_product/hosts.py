@@ -22,8 +22,11 @@ class Hosts(DataBase):
 
     return id
 
-  def get_hosts(self, version_id=None, offset=0, limit=100):
+  def get_hosts(self, crawl_status=None, version_id=None, offset=0, limit=100):
     query = {}
+
+    if crawl_status is not None:
+      query['crawl_status'] = crawl_status
 
     if version_id is not None:
       query['version_id'] = version_id

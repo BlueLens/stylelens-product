@@ -5,7 +5,7 @@ from pprint import pprint
 api_instance = Hosts()
 
 try:
-    api_response = api_instance.get_hosts(crawl_status='doing')
+    api_response = api_instance.get_hosts()
     pprint(api_response)
 except Exception as e:
     print("Exception when calling get_hosts: %s\n" % e)
