@@ -90,15 +90,32 @@ class Products(DataBase):
 
     return count
 
-  def get_size_products(self, version_id, is_processed=None, is_classified=None):
+  def get_size_products(self, version_id,
+                        is_available=None,
+                        is_processed=None,
+                        is_classified=None,
+                        is_processed_for_text_class_model=None,
+                        is_classified_for_text=None):
     query = {}
     query['version_id'] = version_id
+
+    if is_available is not None:
+      query['is_available'] = is_available
 
     if is_processed is not None:
       query['is_processed'] = is_processed
 
+    if is_processed_for_text_class_model is not None:
+      query['is_processed_for_text_class_model'] = is_processed_for_text_class_model
+
     if is_classified is not None:
       query['is_classified'] = is_classified
+
+    if is_classified is not None:
+      query['is_classified'] = is_classified
+
+    if is_classified_for_text is not None:
+      query['is_classified_for_text'] = is_classified_for_text
 
     try:
       count = self.products.find(query).count()
