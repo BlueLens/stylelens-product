@@ -57,6 +57,7 @@ class Products(DataBase):
                                   version_id,
                                   is_processed=None,
                                   is_classified=None,
+                                  is_processed_for_text_class_model=None,
                                   offset=0, limit=100):
     query = {}
     query['version_id'] = version_id
@@ -70,6 +71,11 @@ class Products(DataBase):
       query['$or'] = [{'is_classified':False}, {'is_classified':None}]
     elif is_classified is True:
       query['is_classified'] = True
+
+    if is_processed_for_text_class_model is False:
+      query['$or'] = [{'is_processed_for_text_class_model':False}, {'is_processed_for_text_class_model':None}]
+    elif is_processed_for_text_class_model is True:
+      query['is_processed_for_text_class_model'] = True
 
     try:
       r = self.products.find(query).skip(offset).limit(limit)
@@ -124,12 +130,17 @@ class Products(DataBase):
 
     return count
 
-  def get_products_by_keyword(self, keyword, only_text=True,
+  def get_products_by_keyword(self, keyword,
+                              only_text=True,
+                              is_processed_for_text_class_model=None,
                               offset=0,
                               limit=100):
     query = {}
     query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
                     {'cate': {"$regex": keyword, "$options": 'x'}}]
+
+    if is_processed_for_text_class_model is not None:
+      query['is_processed_for_text_class_model'] = is_processed_for_text_class_model
 
     try:
       if only_text is True:
@@ -150,6 +161,16 @@ class Products(DataBase):
       print(e)
 
     return r.modified_count
+
+  def update_products(self, products):
+    try:
+      bulk = self.products.initialize_unordered_bulk_op()
+      for i in range(0, len(products)):
+        bulk.find({'_id': products[i]['_id']}).update({'$set': products[i]})
+      r = bulk.execute()
+      print(r)
+    except Exception as e:
+      print(e)
 
   def update_product_by_hostcode_and_productno(self, product):
     query = {"host_code": product['host_code'], "product_no": product['product_no']}
