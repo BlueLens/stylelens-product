@@ -55,6 +55,7 @@ class Products(DataBase):
 
   def get_products_by_version_id(self,
                                   version_id,
+                                  is_available=None,
                                   is_processed=None,
                                   is_classified=None,
                                   is_processed_for_text_class_model=None,
@@ -66,6 +67,11 @@ class Products(DataBase):
       query['$or'] = [{'is_processed':False}, {'is_processed':None}]
     elif is_processed is True:
       query['is_processed'] = True
+
+    if is_available is False:
+      query['$or'] = [{'is_available':False}, {'is_available':None}]
+    elif is_available is True:
+      query['is_available '] = True
 
     if is_classified is False:
       query['$or'] = [{'is_classified':False}, {'is_classified':None}]
