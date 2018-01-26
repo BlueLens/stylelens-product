@@ -145,8 +145,10 @@ class Products(DataBase):
     query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
                     {'cate': {"$regex": keyword, "$options": 'x'}}]
 
-    if is_processed_for_text_class_model is not None:
+    if is_processed_for_text_class_model is True:
       query['is_processed_for_text_class_model'] = is_processed_for_text_class_model
+    elif is_processed_for_text_class_model is False:
+      query['$or'] = [{'is_processed_for_text_class_model': False}, {'is_processed_for_text_class_model': None}]
 
     try:
       if only_text is True:
