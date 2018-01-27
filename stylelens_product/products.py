@@ -176,7 +176,6 @@ class Products(DataBase):
       for i in range(0, len(products)):
         bulk.find({'_id': products[i]['_id']}).update({'$set': products[i]})
       r = bulk.execute()
-      print(r)
     except Exception as e:
       print(e)
 
