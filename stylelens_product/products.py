@@ -71,7 +71,7 @@ class Products(DataBase):
     if is_available is False:
       query['$or'] = [{'is_available':False}, {'is_available':None}]
     elif is_available is True:
-      query['is_available '] = True
+      query['is_available'] = True
 
     if is_classified is False:
       query['$or'] = [{'is_classified':False}, {'is_classified':None}]

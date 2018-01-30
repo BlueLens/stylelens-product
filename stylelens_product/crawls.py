@@ -58,10 +58,12 @@ class Crawls(DataBase):
 
     return count
 
-  def update_crawl_by_host_code(self, host_code, crawl):
+  def update_crawl_by_host_code(self, version_id, host_code, crawl):
+    query = {}
+    query['version_id'] = version_id
+    query['host_code'] = host_code
     try:
-      r = self.crawls.update_one({"host_code": host_code},
-                                  {"$set": crawl})
+      r = self.crawls.update_one(query, {"$set": crawl})
     except Exception as e:
       print(e)
 
