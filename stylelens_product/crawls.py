@@ -29,11 +29,16 @@ class Crawls(DataBase):
 
   def get_crawls(self,
                 version_id,
+                host_group=None,
                 status=STATUS_TODO,
                 offset=0, limit=100):
     query = {}
     query['version_id'] = version_id
     query['status'] = status
+
+    if host_group is not None:
+      query['host_group'] = host_group
+
     try:
       r = self.crawls.find(query).skip(offset).limit(limit)
     except Exception as e:
@@ -43,6 +48,7 @@ class Crawls(DataBase):
 
   def get_size_crawls(self,
                  version_id,
+                 host_group=None,
                  status=None,
                  offset=0, limit=100):
     query = {}
@@ -50,6 +56,9 @@ class Crawls(DataBase):
 
     if status is not None:
       query['status'] = status
+
+    if host_group is not None:
+      query['host_group'] = host_group
 
     try:
       count = self.crawls.find(query).count()

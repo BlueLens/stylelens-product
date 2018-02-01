@@ -123,9 +123,6 @@ class Products(DataBase):
     if is_classified is not None:
       query['is_classified'] = is_classified
 
-    if is_classified is not None:
-      query['is_classified'] = is_classified
-
     if is_classified_for_text is not None:
       query['is_classified_for_text'] = is_classified_for_text
 
@@ -215,12 +212,23 @@ class Products(DataBase):
 
   def reset_product_as_not_object_classified(self, version_id=None):
     query = {}
-    product = {"is_classified": None}
 
-    if version_id is None:
-      query = {"is_classified":{"$ne":None}}
-    else:
-      query = {"is_classified":{"$ne":None}, "version_id":version_id}
+    if version_id is not None:
+      query['version_id'] = version_id
+
+    try:
+      r = self.products.update_many(query, {"$unset":{'is_classified':1}})
+      print(r)
+    except Exception as e:
+      print(e)
+    return r.raw_result
+
+  def reset_product_as_available(self, version_id=None):
+    query = {}
+    product = {"is_available": True}
+
+    if version_id is not None:
+      query['version_id'] = version_id
 
     try:
       r = self.products.update_many(query, {"$set":product})
