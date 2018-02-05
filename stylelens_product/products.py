@@ -197,6 +197,17 @@ class Products(DataBase):
 
     return r.raw_result
 
+  def delete_old_products(self, version_id):
+    query = {}
+    query["version_id"] = {"$ne": version_id}
+
+    try:
+      r = self.products.delete_many(query)
+    except Exception as e:
+      print(e)
+
+    return r.raw_result
+
   def delete_products_by_hostcode_and_version_id(self, host_code, version_id, except_version=True):
     if except_version == True:
       query = {"host_code": host_code, "version_id": version_id}
