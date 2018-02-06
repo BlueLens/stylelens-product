@@ -135,17 +135,17 @@ class Products(DataBase):
 
   def get_products_by_keyword(self, keyword,
                               only_text=True,
-                              is_processed_for_text_class_model=None,
                               offset=0,
                               limit=100):
     query = {}
-    query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
-                    {'cate': {"$regex": keyword, "$options": 'x'}}]
-
-    if is_processed_for_text_class_model is True:
-      query['is_processed_for_text_class_model'] = is_processed_for_text_class_model
-    elif is_processed_for_text_class_model is False:
-      query['$or'] = [{'is_processed_for_text_class_model': False}, {'is_processed_for_text_class_model': None}]
+    query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'},
+                     '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
+                            {'is_processed_for_text_class_model': False}]
+                     },
+                    {'cate': {"$regex": keyword, "$options": 'x'},
+                     '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
+                            {'is_processed_for_text_class_model': False}]
+                     }]
 
     try:
       if only_text is True:
@@ -157,6 +157,20 @@ class Products(DataBase):
       print(e)
 
     return list(r)
+
+  def get_products_count_by_keyword(self, keyword):
+    query = {}
+    query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
+                    {'cate': {"$regex": keyword, "$options": 'x'}}]
+
+    r = -1
+    try:
+      r = self.products.find(query).count()
+
+    except Exception as e:
+      print(e)
+
+    return r
 
   def update_product_by_id(self, product_id, product):
     try:
