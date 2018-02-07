@@ -135,10 +135,17 @@ class Products(DataBase):
 
   def get_products_by_keyword(self, keyword,
                               only_text=True,
+                              is_processed_for_text_class_model=None,
                               offset=0,
                               limit=100):
     query = {}
-    query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'},
+
+    if is_processed_for_text_class_model is None:
+      query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
+                      {'cate': {"$regex": keyword, "$options": 'x'}}]
+
+    if is_processed_for_text_class_model is False:
+      query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'},
                      '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
                             {'is_processed_for_text_class_model': False}]
                      },
