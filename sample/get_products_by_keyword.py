@@ -5,7 +5,7 @@ api_instance = Products()
 
 try:
     # Added a new Product
-    api_response = api_instance.get_products_by_keyword('재킷', only_text=True, is_processed_for_text_class_model=False)
+    api_response = api_instance.get_products_by_keyword('nt', only_text=True, is_processed_for_text_class_model=False, offset=0, limit=1000)
     pprint(api_response)
 except Exception as e:
     print("Exception when calling ProductApi->get_products_by_keyword: %s\n" % e)

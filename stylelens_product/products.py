@@ -139,20 +139,28 @@ class Products(DataBase):
                               offset=0,
                               limit=100):
     query = {}
-
     if is_processed_for_text_class_model is None:
-      query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
-                      {'cate': {"$regex": keyword, "$options": 'x'}}]
-
-    if is_processed_for_text_class_model is False:
-      query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'},
-                     '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
-                            {'is_processed_for_text_class_model': False}]
-                     },
-                    {'cate': {"$regex": keyword, "$options": 'x'},
-                     '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
-                            {'is_processed_for_text_class_model': False}]
-                     }]
+      query['$or'] = [{'$text':{'$search':keyword}}]
+    elif is_processed_for_text_class_model is False:
+      query['$or'] = [{'$text':{'$search':keyword},
+                       '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
+                              {'is_processed_for_text_class_model': False}]
+                       }]
+    #
+    #
+    # if is_processed_for_text_class_model is None:
+    #   query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
+    #                   {'cate': {"$regex": keyword, "$options": 'x'}}]
+    #
+    # if is_processed_for_text_class_model is False:
+    #   query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'},
+    #                  '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
+    #                         {'is_processed_for_text_class_model': False}]
+    #                  },
+    #                 {'cate': {"$regex": keyword, "$options": 'x'},
+    #                  '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
+    #                         {'is_processed_for_text_class_model': False}]
+    #                  }]
 
     try:
       if only_text is True:
