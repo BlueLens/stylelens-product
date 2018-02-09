@@ -140,7 +140,7 @@ class Products(DataBase):
                               limit=100):
     query = {}
     if is_processed_for_text_class_model is None:
-      query['$or'] = [{'$text':{'$search':keyword}}]
+      query['$or'] = [{'$text':{'$search':"\"" + keyword + "\""}}]
     elif is_processed_for_text_class_model is False:
       query['$or'] = [{'$text':{'$search':keyword},
                        '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
@@ -179,7 +179,7 @@ class Products(DataBase):
     # query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
     #                 {'cate': {"$regex": keyword, "$options": 'x'}}]
     if is_processed_for_text_class_model is None:
-      query['$or'] = [{'$text':{'$search':keyword}}]
+      query['$or'] = [{'$text':{'$search':"\"" + keyword + "\""}}]
     elif is_processed_for_text_class_model is False:
       query['$or'] = [{'$text':{'$search':keyword},
                        '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
