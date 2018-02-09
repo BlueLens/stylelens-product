@@ -173,11 +173,18 @@ class Products(DataBase):
 
     return list(r)
 
-  def get_products_count_by_keyword(self, keyword):
+  def get_products_count_by_keyword(self, keyword,
+                                    is_processed_for_text_class_model=None):
     query = {}
-    query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
-                    {'cate': {"$regex": keyword, "$options": 'x'}}]
-
+    # query['$or'] = [{"name": {"$regex": keyword, "$options": 'x'}},
+    #                 {'cate': {"$regex": keyword, "$options": 'x'}}]
+    if is_processed_for_text_class_model is None:
+      query['$or'] = [{'$text':{'$search':keyword}}]
+    elif is_processed_for_text_class_model is False:
+      query['$or'] = [{'$text':{'$search':keyword},
+                       '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
+                              {'is_processed_for_text_class_model': False}]
+                       }]
     r = -1
     try:
       r = self.products.find(query).count()
