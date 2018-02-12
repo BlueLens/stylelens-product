@@ -142,7 +142,7 @@ class Products(DataBase):
     if is_processed_for_text_class_model is None:
       query['$or'] = [{'$text':{'$search':"\"" + keyword + "\""}}]
     elif is_processed_for_text_class_model is False:
-      query['$or'] = [{'$text':{'$search':keyword},
+      query['$and'] = [{'$text':{'$search':"\"" + keyword + "\""},
                        '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
                               {'is_processed_for_text_class_model': False}]
                        }]
