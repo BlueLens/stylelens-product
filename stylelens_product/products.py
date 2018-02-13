@@ -59,6 +59,7 @@ class Products(DataBase):
                                   is_processed=None,
                                   is_classified=None,
                                   is_processed_for_text_class_model=None,
+                                  is_classified_for_text=None,
                                   offset=0, limit=100):
     query = {}
     query['version_id'] = version_id
@@ -82,6 +83,11 @@ class Products(DataBase):
       query['$or'] = [{'is_processed_for_text_class_model':False}, {'is_processed_for_text_class_model':None}]
     elif is_processed_for_text_class_model is True:
       query['is_processed_for_text_class_model'] = True
+
+    if is_classified_for_text is False:
+      query['$or'] = [{'is_classified_for_text': False}, {'is_classified_for_text': None}]
+    elif is_classified_for_text is True:
+      query['is_classified_for_text'] = True
 
     try:
       r = self.products.find(query).skip(offset).limit(limit)
