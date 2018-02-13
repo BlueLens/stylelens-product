@@ -59,6 +59,7 @@ class Products(DataBase):
                                   is_processed=None,
                                   is_classified=None,
                                   is_processed_for_text_class_model=None,
+                                  is_classified_for_text=None,
                                   offset=0, limit=100):
     query = {}
     query['version_id'] = version_id
@@ -82,6 +83,11 @@ class Products(DataBase):
       query['$or'] = [{'is_processed_for_text_class_model':False}, {'is_processed_for_text_class_model':None}]
     elif is_processed_for_text_class_model is True:
       query['is_processed_for_text_class_model'] = True
+
+    if is_classified_for_text is False:
+      query['$or'] = [{'is_classified_for_text': False}, {'is_classified_for_text': None}]
+    elif is_classified_for_text is True:
+      query['is_classified_for_text'] = True
 
     try:
       r = self.products.find(query).skip(offset).limit(limit)
@@ -142,7 +148,7 @@ class Products(DataBase):
     if is_processed_for_text_class_model is None:
       query['$or'] = [{'$text':{'$search':"\"" + keyword + "\""}}]
     elif is_processed_for_text_class_model is False:
-      query['$or'] = [{'$text':{'$search':keyword},
+      query['$and'] = [{'$text':{'$search':"\"" + keyword + "\""},
                        '$or':[{'is_processed_for_text_class_model': {'$exists': 0}},
                               {'is_processed_for_text_class_model': False}]
                        }]
@@ -292,6 +298,19 @@ class Products(DataBase):
 
     try:
       r = self.products.update_many(query, {"$unset":{'is_processed_for_text_class_model':1}})
+      print(r)
+    except Exception as e:
+      print(e)
+    return r.raw_result
+
+  def reset_product_is_classified_for_text(self, version_id=None):
+    query = {}
+
+    if version_id is not None:
+      query['version_id'] = version_id
+
+    try:
+      r = self.products.update_many(query, {"$unset":{'is_classified_for_text':1}})
       print(r)
     except Exception as e:
       print(e)
