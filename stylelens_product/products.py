@@ -302,3 +302,16 @@ class Products(DataBase):
     except Exception as e:
       print(e)
     return r.raw_result
+
+  def reset_product_is_classified_for_text(self, version_id=None):
+    query = {}
+
+    if version_id is not None:
+      query['version_id'] = version_id
+
+    try:
+      r = self.products.update_many(query, {"$unset":{'is_classified_for_text':1}})
+      print(r)
+    except Exception as e:
+      print(e)
+    return r.raw_result
