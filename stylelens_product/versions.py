@@ -8,13 +8,14 @@ class Versions(DataBase):
 
   def add_version(self, version):
     id = None
-    query = {"name": version['name']}
+    query = {"host_group": version['host_group']}
     try:
       r = self.versions.update_one(query,
                                   {"$set": version},
                                   upsert=True)
     except Exception as e:
       print(e)
+      return None
 
     if 'upserted' in r.raw_result:
       id = str(r.raw_result['upserted'])

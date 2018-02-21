@@ -16,6 +16,7 @@ class Hosts(DataBase):
                                upsert=True)
     except Exception as e:
       print(e)
+      return None
 
     if 'upserted' in r.raw_result:
       id = str(r.raw_result['upserted'])
@@ -25,7 +26,6 @@ class Hosts(DataBase):
   def get_hosts(self,
                 host_group=None,
                 crawl_status=None,
-                version_id=None,
                 offset=0, limit=100):
     query = {}
 
@@ -35,13 +35,11 @@ class Hosts(DataBase):
     if crawl_status is not None:
       query['crawl_status'] = crawl_status
 
-    if version_id is not None:
-      query['version_id'] = version_id
-
     try:
       r = self.hosts.find(query).skip(offset).limit(limit)
     except Exception as e:
       print(e)
+      return None
 
     return list(r)
 
@@ -53,5 +51,6 @@ class Hosts(DataBase):
                                 upsert=True)
     except Exception as e:
       print(e)
+      return None
 
     return r.raw_result
