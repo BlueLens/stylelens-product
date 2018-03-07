@@ -13,5 +13,5 @@ class Versions(DataBase):
       print(e)
       return None
 
-    return id
+    return str(id)
 
