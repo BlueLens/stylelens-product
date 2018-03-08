@@ -21,6 +21,16 @@ class Products(DataBase):
 
     return product_id
 
+  def add_products(self, products):
+    try:
+      bulk = self.products.initialize_unordered_bulk_op()
+      for i in range(0, len(products)):
+        bulk.find({'product_no': products[i]['product_no']}).upsert().update({'$set': products[i]})
+
+      bulk.execute()
+    except Exception as e:
+      print(e)
+
   def get_product_by_id(self, product_id):
     try:
       r = self.products.find_one({"_id": ObjectId(product_id)})
