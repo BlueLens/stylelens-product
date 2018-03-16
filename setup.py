@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "stylelens-product"
-VERSION = "1.0.89"
+VERSION = "1.0.90"
 # To install the library, run the following
 #
 # python setup.py install
@@ -23,7 +23,7 @@ VERSION = "1.0.89"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["pymongo"]
+REQUIRES = ["pymongo", "google-cloud-bigquery"]
 
 setup(
     name=NAME,
