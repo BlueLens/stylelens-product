@@ -6,10 +6,7 @@ from pprint import pprint
 api_instance = Products()
 
 product = {}
-product['product_id'] = 'sss2'
-product['host_code'] = 'HC8000'
-product['host_group'] = 'HG8000'
-product['host_name'] = 'amazon'
+product['asin'] = 'HC8000'
 
 try:
   api_response = api_instance.add_product(product)
