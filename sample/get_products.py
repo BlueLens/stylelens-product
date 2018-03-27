@@ -8,7 +8,7 @@ api_instance = stylelens_product.ProductApi()
 
 try:
     # Added a new Product
-    api_response = api_instance.get_products_by_hostcode('HC0002')
+    api_response = api_instance.get_products_by_hostcode('HC8000')
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductApi->get_products_by_hostcode: %s\n" % e)

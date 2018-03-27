@@ -78,7 +78,21 @@ class Products(DataBase):
       bigquery.SchemaField('label', 'STRING'),
       bigquery.SchemaField('manufacturer', 'STRING'),
       bigquery.SchemaField('product_group', 'STRING'),
-      bigquery.SchemaField('product_type_name', 'STRING')
+      bigquery.SchemaField('product_type_name', 'STRING'),
+
+      bigquery.SchemaField('name', 'STRING'),
+      bigquery.SchemaField('host_url', 'STRING'),
+      bigquery.SchemaField('host_code', 'STRING'),
+      bigquery.SchemaField('host_group', 'STRING'),
+      bigquery.SchemaField('host_name', 'STRING'),
+      bigquery.SchemaField('product_no', 'STRING'),
+      bigquery.SchemaField('product_url', 'STRING'),
+      bigquery.SchemaField('main_image', 'STRING'),
+      bigquery.SchemaField('sub_images', 'STRING', mode='REPEATED'),
+      bigquery.SchemaField('version_id', 'STRING'),
+      bigquery.SchemaField('tags', 'STRING'),
+      bigquery.SchemaField('nation', 'STRING')
+
     ]
     table_ref = self.dataset.table(table_name)
     _table = bigquery.Table(table_ref=table_ref, schema=schema)
