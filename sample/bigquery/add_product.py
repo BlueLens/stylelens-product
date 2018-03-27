@@ -3,7 +3,7 @@ from stylelens_product.bigquery.products import Products
 from pprint import pprint
 # create an instance of the API class
 
-api_instance = Products()
+api_instance = Products(google_service_account_json='./service-account-file.json')
 
 product = {}
 product['asin'] = 'HC8000'

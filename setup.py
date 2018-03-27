@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "stylelens-product"
-VERSION = "1.0.94"
+VERSION = "1.0.95"
 # To install the library, run the following
 #
 # python setup.py install

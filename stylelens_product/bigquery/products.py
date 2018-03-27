@@ -6,8 +6,8 @@ from stylelens_product.bigquery.database import DataBase
 TABLE_NAME = 'products'
 
 class Products(DataBase):
-  def __init__(self):
-    super(Products, self).__init__()
+  def __init__(self, google_service_account_json=None):
+    super(Products, self).__init__(google_service_account_json)
     table_ref = self.dataset.table(TABLE_NAME)
     try:
       self.table = self.client.get_table(table_ref=table_ref)

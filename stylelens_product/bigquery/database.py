@@ -3,11 +3,17 @@ from google.cloud import bigquery
 
 DATASET = 'bluelens'
 
-GOOGLE_SERVICE_ACCOUNT_FILE = os.environ['GOOGLE_SERVICE_ACCOUNT_FILE']
 
 class DataBase(object):
-  def __init__(self):
-    self.client = bigquery.Client.from_service_account_json(GOOGLE_SERVICE_ACCOUNT_FILE)
+  def __init__(self, google_service_account_json=None):
+
+    if google_service_account_json != None:
+      service_account_json = google_service_account_json
+    else:
+      GOOGLE_SERVICE_ACCOUNT_FILE = os.environ['GOOGLE_SERVICE_ACCOUNT_FILE']
+      service_account_json = GOOGLE_SERVICE_ACCOUNT_FILE
+
+    self.client = bigquery.Client.from_service_account_json(service_account_json)
     self.job_config = bigquery.LoadJobConfig()
 
     self.dataset = self.client.dataset(DATASET)
